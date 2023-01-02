@@ -27,6 +27,6 @@ const userData = [
 	},
 ]
 
-const userTable = () => User.bulkCreate(userData)
+const createUserTable = () => User.bulkCreate(userData)
 
-module.exports = userTable
+module.exports = createUserTable
