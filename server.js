@@ -11,19 +11,17 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store)
 const app = express()
 const PORT = process.env.PORT || 3001
 
-// const sess = {
-// 	secret: process.env.SESSION_SECRET_KEY,
-// 	cookie: {
-// 		maxAge: 300000,
-// 		httpOnly: true,
-// 		secure: false,
-// 	},
-// 	resave: false,
-// 	saveUnitialized: true,
-// 	store: new SequelizeStore({ db: process.env.SESSION_DB }),
-// }
+const sess = {
+  secret: process.env.SESSION_SECRET_KEY,
+  cookie: {
+    maxAge: 300000,
+    httpOnly: true,
+    secure: false,
+  },
+  store: new SequelizeStore({ db: sequelize }),
+}
 
-// app.use(session(sess))
+app.use(session(sess))
 
 // set express engine to handlebars
 const hbs = expressHandleBars.create()
@@ -36,5 +34,5 @@ app.use(routes)
 app.use(express.static(path.join(__dirname, 'public')))
 
 sequelize.sync({ force: false }).then(() => {
-	app.listen(PORT, () => console.log(`Now listening on ${PORT}!`))
+  app.listen(PORT, () => console.log(`Now listening on ${PORT}!`))
 })
