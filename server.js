@@ -12,12 +12,14 @@ const app = express()
 const PORT = process.env.PORT || 3001
 
 const sess = {
-  secret: process.env.SESSION_SECRET_KEY,
+  secret: '74vLqUS50mP4FNlPzfqd42IBnoL34823',
   cookie: {
     maxAge: 300000,
     httpOnly: true,
     secure: false,
   },
+  resave: false,
+  saveUninitialized: true,
   store: new SequelizeStore({ db: sequelize }),
 }
 
@@ -33,6 +35,6 @@ app.use(express.urlencoded({ extended: true }))
 app.use(routes)
 app.use(express.static(path.join(__dirname, 'public')))
 
-sequelize.sync({ force: false }).then(() => {
+sequelize.sync({ alter: true }).then(() => {
   app.listen(PORT, () => console.log(`Now listening on ${PORT}!`))
 })
