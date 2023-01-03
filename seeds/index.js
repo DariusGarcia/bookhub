@@ -1,14 +1,17 @@
 const seedUsers = require('./userSeed')
+const seedBooks = require('./bookSeed')
 
 const sequelize = require('../config/connection')
 
 const seedAll = async () => {
-	await sequelize.sync({ force: true })
-	console.log('\n----- DATABASE SYNCED -----\n')
+  await sequelize.sync({ force: true })
+  console.log('\n----- DATABASE SYNCED -----\n')
 
-	await seedUsers()
+  await seedUsers()
+  console.log('\n----- USERS SEEDED -----\n')
 
-	console.log('\n----- USERS SEEDED -----\n')
+  await seedBooks()
+  console.log('\n----- BOOKS SEEDED -----\n')
 }
 
 seedAll()
