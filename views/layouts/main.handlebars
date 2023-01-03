@@ -4,8 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <script src="https://cdn.tailwindcss.com/%22%3E"></script>    
     <title>BookHub</title>
     <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css"/>
+     <link href="https://fonts.googleapis.com/css?family=Work+Sans:200,400&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -29,7 +33,25 @@
   <main class="content">
     {{{body}}}
   </main>
-
+  <footer class="container mx-auto bg-white py-8 border-t border-gray-400">
+        <div class="container flex px-3 py-8 ">
+            <div class="w-full mx-auto flex flex-wrap">
+                <div class="flex w-full lg:w-1/2 ">
+                    <div class="px-3 md:px-0">
+                        <h3 class="font-bold text-gray-900">About</h3>
+                        <p class="py-4">
+                            We are awesome
+                        </p>
+                    </div>
+                </div>
+                <div class="flex w-full lg:w-1/2 lg:justify-end lg:text-right">
+                    <div class="px-3 md:px-0">
+                        <h3 class="font-bold text-gray-900">We are the champ!</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
 <script src='/js/login.js'></script>
