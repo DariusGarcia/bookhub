@@ -8,37 +8,28 @@
     <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
-   <div class="container">
 
-    <input id="toggle" type="checkbox">
-
-    
-    <label class="toggle-container" for="toggle">
-     
-      <span class="button button-toggle"></span>
-    </label>
-
-    <!-- The Nav Menu -->
-    <nav class="nav">
-      <a class="nav-item" href="">Dashboard</a>
-      <a class="nav-item" href="">History</a>
-      <a class="nav-item" href="">Statistics</a>
-      <a class="nav-item" href="">Settings</a>
-    </nav>
-
-    <!-- Dummy Content -->
-    <section class="dummy-content">
-      <div class="circle"></div>
-      <div class="text">
-        <span></span><span></span>
-      </div>
-      <div class="square-top"></div>
-      <div class="square-behind"></div>
-    </section>
-  </div>
-  <main class="main-hb-main">
+    <!-- Navigation bar -->
+<header class="header">
+  <!-- Logo -->
+  <a href="#" class="logo">BookHub</a>
+  <!-- Hamburger icon -->
+  <input class="side-menu" type="checkbox" id="side-menu"/>
+  <label class="hamb" for="side-menu"><span class="hamb-line"></span></label>
+  <!-- Menu -->
+  <nav class="nav">
+    <ul class="menu">
+      <li><a href="/">About</a></li>
+      <li><a href="/books">Books</a></li>
+      <li><a href="/cart">Cart</a></li>
+    </ul>
+  </nav>
+</header>
+<!-- Main content -->
+  <main class="content">
     {{{body}}}
   </main>
 
 </body>
 </html>
+<script src='/js/login.js'></script>

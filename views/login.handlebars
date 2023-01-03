@@ -1,20 +1,20 @@
-<div class="login-card">
-  <div class="card-header">
-    <h2>Login</h2>
-  </div>
-  <form id="login-form" class="card-body">
-    <div>
-      <label for="username-input-login">Username</label>
-      <input type="text" id="username-input-login" />
+<div class='login-card'>
+  <div class='auth-container'>
+    <div >
+      <h2>Login</h2>
     </div>
-    <div>
-      <label for="password-input-login" class="form-label">Password</label>
-      <input type="password" id="password-input-login" />
-    </div>
-    <button type="submit" id="login-btn" class="btn">Login!</button>
-    <a type="button" href="/signup">Sign up instead</a>
-  </form>
-
+    <form id='login-form' class='auth-form'>
+      <div class="input-wrapper">
+        <label for='username-input-login'>Username</label>
+        <input type='text'  class='auth-input-fields' id='username-input-login' />
+      </div>
+      <div class="input-wrapper">
+        <label for='password-input-login' class='form-label'>Password</label>
+        <input type='password' class='auth-input-fields'  id='password-input-login' />
+      </div>
+      <button type='submit' id='login-btn' class='auth-btn'>Login!</button>
+      <a type='button' href='/signup'>Sign up instead</a>
+    </form></div>
 </div>
 
-<script src="/js/login.js"></script>
+<script src='/js/login.js'></script>
