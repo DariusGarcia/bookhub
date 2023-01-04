@@ -21,16 +21,17 @@ bookRouter.get('/:id', async (req, res) => {
 
 bookRouter.put('/:id', async (req, res) => {
   try {
-    const [singleBook] = await Book.update(req.body, {where: {id: req.params.id}})
-    if(singleBook > 0) {
-      console.log(singleBook);
-      res.status(200).end();
+    const [singleBook] = await Book.update(req.body, {
+      where: { id: req.params.id },
+    })
+    if (singleBook > 0) {
+      console.log(singleBook)
+      res.status(200).end()
     } else {
-      res.status(404).end();
+      res.status(404).end()
     }
-  } 
-    catch (err) {
-    res.status(500).json(err);
+  } catch (err) {
+    res.status(500).json(err)
   }
 });
 
