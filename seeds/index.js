@@ -12,6 +12,8 @@ const seedAll = async () => {
 
   await seedBooks()
   console.log('\n----- BOOKS SEEDED -----\n')
+  console.log('\n-----  SEED ENDED  -----\n')
+  process.exit(0);
 }
 
-seedAll()
+seedAll();

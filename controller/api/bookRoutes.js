@@ -9,7 +9,8 @@ bookRouter.get('/', async (req, res) => {
     res.status(400).json(err)
   }
 })
-// POST a single book to db
+
+// POST a single book
 bookRouter.post('/', async (req, res) => {
   try {
     const booksArr = await Book.create({
@@ -21,6 +22,8 @@ bookRouter.post('/', async (req, res) => {
     res.status(400).json(err)
   }
 })
+
+// GET a single book
 bookRouter.get('/:id', async (req, res) => {
   try {
     const singleBook = await Book.findByPk(req.params.id)
@@ -28,8 +31,8 @@ bookRouter.get('/:id', async (req, res) => {
   } catch (err) {
     res.status(400).json(err)
   }
-})
-
+});
+// UPDATE a single book
 bookRouter.put('/:id', async (req, res) => {
   try {
     const [singleBook] = await Book.update(req.body, {
@@ -44,6 +47,23 @@ bookRouter.put('/:id', async (req, res) => {
   } catch (err) {
     res.status(500).json(err)
   }
-})
-
+});
+// DELETE a single book
+bookRouter.delete('/:id', async (req, res) => {
+  try {
+    const singleBook = Book.destroy({
+      where: {
+        id: req.params.id
+      }
+    });
+    
+    if (!singleBook) {
+      res.status(404).json({ message: 'No book found with this id!'});
+      return;
+    }
+    res.status(200).json({message: 'deleted successfully'});
+  } catch(err) {
+    res.status(500).json(err);
+  }
+});
 module.exports = bookRouter
