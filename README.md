@@ -8,6 +8,7 @@
 - [x] User can view
 - [x] User can view
 - [x] User can browse
+- [x] Only authenticated managers can add and delete books from the database.
 
 ## Technologies Used
 

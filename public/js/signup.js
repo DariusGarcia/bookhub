@@ -1,8 +1,6 @@
-
-
 const signUpHandler = async function (event) {
-  event.preventDefault();
-  
+  event.preventDefault()
+
   const newUser = document.querySelector('#username-input-login')
   const newPassword = document.querySelector('#password-input-login')
 
@@ -27,6 +25,3 @@ const loginForm = document.querySelector('#login-form')
 if (loginForm) {
   loginForm.addEventListener('submit', signUpHandler)
 }
-
-
-
