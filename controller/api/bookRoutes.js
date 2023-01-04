@@ -8,7 +8,8 @@ bookRouter.get('/', async (req, res) => {
   } catch (err) {
     res.status(400).json(err)
   }
-})
+});
+
 bookRouter.get('/:id', async (req, res) => {
   try {
     const singleBook = await Book.findByPk(req.params.id)
@@ -16,7 +17,7 @@ bookRouter.get('/:id', async (req, res) => {
   } catch (err) {
     res.status(400).json(err)
   }
-})
+});
 
 bookRouter.put('/:id', async (req, res) => {
   try {
@@ -29,6 +30,24 @@ bookRouter.put('/:id', async (req, res) => {
     }
   } 
     catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+bookRouter.delete('/:id', async (req, res) => {
+  try {
+    const singleBook = Book.destroy({
+      where: {
+        id: req.params.id
+      }
+    });
+    
+    if (!singleBook) {
+      res.status(404).json({ message: 'No book found with this id!'});
+      return;
+    }
+    res.status(200).json({message: 'deleted successfully'});
+  } catch(err) {
     res.status(500).json(err);
   }
 });
