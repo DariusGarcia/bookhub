@@ -8,7 +8,7 @@ homeRouter.get('/', async (req, res) => {
 
     const users = userData.map((user) => user.get({ plain: true }))
 
-    res.render('home', { users })
+    res.render('displaybooks', { layout:'main' })
   } catch (err) {
     res.status(500).json(err)
   }
