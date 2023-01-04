@@ -9,6 +9,18 @@ bookRouter.get('/', async (req, res) => {
     res.status(400).json(err)
   }
 })
+// POST a single book to db
+bookRouter.post('/', async (req, res) => {
+  try {
+    const booksArr = await Book.create({
+      ...req.body,
+      // userId: req.session.userId,
+    })
+    res.json(booksArr)
+  } catch (err) {
+    res.status(400).json(err)
+  }
+})
 bookRouter.get('/:id', async (req, res) => {
   try {
     const singleBook = await Book.findByPk(req.params.id)
