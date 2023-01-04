@@ -141,7 +141,6 @@ body {
 }
 
 .auth-container {
-
     background-color: gainsboro;
     padding: 2rem;
     width: 50%;
@@ -155,7 +154,6 @@ body {
 .auth-form {
     display: flex;
     flex-direction: column;
-
     gap: 2rem;
 }
 
@@ -177,6 +175,7 @@ body {
     border: none;
     border-radius: 4px;
     width: 12rem;
+    height: 3rem;
 }
 
 .auth-btn:hover {

@@ -1,14 +1,14 @@
 const homeRouter = require('express').Router()
-const { User } = require('../models/')
+const { Book, User } = require('../models/')
 
 // get all users for homepage
 homeRouter.get('/', async (req, res) => {
   try {
-    const userData = await User.findAll({})
+    const bookData = await Book.findAll({})
 
-    const users = userData.map((user) => user.get({ plain: true }))
+    const books = bookData.map((book) => book.get({ plain: true }))
 
-    res.render('displaybooks', { layout:'main' })
+    res.render('displayBooks', { layout: 'main', books })
   } catch (err) {
     res.status(500).json(err)
   }
