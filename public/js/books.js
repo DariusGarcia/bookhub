@@ -1,4 +1,4 @@
-const bookFormHandler = async function (e) {
+const newBookFormHandler = async function (e) {
   e.preventDefault()
 
   const title = document.querySelector('#book-form-title-input').value
@@ -29,5 +29,5 @@ const bookFormHandler = async function (e) {
 const bookForm = document.querySelector('#book-form')
 
 if (bookForm) {
-  bookForm.addEventListener('submit', bookFormHandler)
+  bookForm.addEventListener('submit', newBookFormHandler)
 }
