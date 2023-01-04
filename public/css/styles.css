@@ -1,7 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
 
 :root {
+    /* colors */
     --btn: rgb(4, 110, 209);
+    --darkGrey: #36383F;
+    --greyHover: #85888C;
+    --lightGrey: #f9f9f9;
 }
 
 *, *::before, *::after {
@@ -24,7 +28,7 @@ body {
 
 /* Header */
 .header {
-    background-color: #36383F;
+    background-color: var(--darkGrey);
     position: sticky;
     top: 0;
     width: 100%;
@@ -33,7 +37,7 @@ body {
 /* Logo */
 .logo {
     display: inline-block;
-    color: #f9f9f9;
+    color: var(--lightGrey);
     font-size: 3rem;
     margin-left: 1.125rem;
     text-decoration: none;
@@ -44,7 +48,7 @@ body {
     width: 100%;
     height: 100%;
     position: fixed;
-    background-color: #36383F;
+    background-color: var(--darkGrey);
     overflow: hidden;
     max-height: 0;
     transition: max-height .5s ease-out;
@@ -58,12 +62,12 @@ body {
 .menu a {
     display: block;
     padding: 1.875em;
-    color: #f9f9f9;
+    color: var(--lightGrey);
     text-decoration: none;
 }
 
 .menu a:hover {
-    background-color: #85888C;
+    background-color: var(--darkGrey);
 }
 
 /* Menu Icon */
@@ -78,7 +82,7 @@ body {
 /* Style label tag */
 
 .hamb-line {
-    background: #f9f9f9;
+    background: var(--lightGrey);
     display: block;
     height: 2px;
     position: relative;
@@ -89,7 +93,7 @@ body {
 
 .hamb-line::before,
 .hamb-line::after {
-    background: #f9f9f9;
+    background: var(--lightGrey);
     content: '';
     height: 100%;
     position: absolute;
@@ -207,7 +211,7 @@ body {
 
     .menu a:hover {
         background-color: transparent;
-        color: #85888C;
+        color: var(--darkGrey);
     }
 
     .hamb {

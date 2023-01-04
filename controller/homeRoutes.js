@@ -42,5 +42,18 @@ homeRouter.get('/:id', async (req, res) => {
     res.status(500).json(err)
   }
 })
+// display single book
+homeRouter.get('/edit/:id', async (req, res) => {
+  try {
+    const singleBook = await Book.findByPk(req.params.id)
+
+    if (singleBook) {
+      const book = singleBook.get({ plain: true })
+      res.render('updateBooks', { layout: 'main', book })
+    }
+  } catch (err) {
+    res.status(500).json(err)
+  }
+})
 
 module.exports = homeRouter
