@@ -1,6 +1,6 @@
 <!-- Loop over each user object -->
 {{#each users as |user| }}
-<div class="row align-center mb-5">
+<div class="row align-center bg-red mb-5">
   <div class="col-md-6">
     <!-- Render user-specific data with Handlebars.js expressions -->
     <h2>{{{get_emoji}}} {{user.name}}</h2>
@@ -11,3 +11,4 @@
   </div>
 </div>
 {{/each}}
+<script src="https://cdn.tailwindcss.com/"></script>
