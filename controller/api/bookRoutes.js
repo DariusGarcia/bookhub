@@ -95,6 +95,7 @@ bookRouter.get('/genre/:genre', async (req, res) => {
 // find ALL books by title
 bookRouter.get('/title/:title', async (req, res) => {
   const titleId = req.params.title
+  titleId.toString()
   try {
     const allBooksByTitle = await Book.findAll({
       where: {

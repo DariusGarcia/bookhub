@@ -1,20 +1,18 @@
 <div class="container mx-auto w-full px-4 lg:w-1/2 xl:w-8/12">
+  <form id="search-form" class="relative mt-3 rounded-md shadow-sm">
   <label for="" class="mb-3 block text-base font-medium text-black">
     Searched by
   </label>
-  <div class="relative mt-3 rounded-md shadow-sm">
-    <input type="text" name="value" id="***" class="text-body-color border-[f0f0f0] focus:border-primary w-full rounded-md border-gray-300 py-3 px-[14px] text-base outline-none focus-visible:shadow-none" placeholder="please Enter">
+    <input type="text" name="value" id="search-input" class="text-body-color border-[f0f0f0] focus:border-primary w-full rounded-md border-gray-300 py-3 px-[14px] text-base outline-none focus-visible:shadow-none" placeholder="please Enter">
     <div class="absolute inset-y-0 right-0 flex items-center">
         <label for="searchBar" class="sr-only">searchbar</label>
           <select id="searchOptions" name="options" class="h-full rounded-md border-transparent bg-transparent py-0 pl-2 pr-7 text-gray-500 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm xl:text-md">
-            <option data='active' value="">Book Title</option>
-            <option data='hidden' value="">Author Name</option>
-            <option data='hidden' value="">Genre</option>
+            <option value="title">Book Title</option>
+            <option value="author">Author Name</option>
+            <option value="genre">Genre</option>
           </select>
     </div>  
-  </div>
-  <div>
-    <button type="submit" class="group relative flex w-full justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+    <button id='search-btn' type="submit" class="group relative flex w-full justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
       <span class="absolute inset-y-0 left-0 flex items-center pl-3">
         <svg class="fill-current hover:text-black-400" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
           <path d="M10,18c1.846,0,3.543-0.635,4.897-1.688l4.396,4.396l1.414-1.414l-4.396-4.396C17.365,13.543,18,11.846,18,10 c0-4.411-3.589-8-8-8s-8,3.589-8,8S5.589,18,10,18z M10,4c3.309,0,6,2.691,6,6s-2.691,6-6,6s-6-2.691-6-6S6.691,4,10,4z" />
@@ -22,6 +20,8 @@
       </span>
       Search
     </button>
+  </form>
+  <div>
   </div>
 </div>
 <section class='my-4 px-2 md:px-0'>
@@ -130,3 +130,4 @@
     {{/each}}</div>
   </section>
 </section>
+<script src="/js/queries.js"></script>
