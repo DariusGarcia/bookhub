@@ -25,7 +25,9 @@ homeRouter.get('/dashboard', isAuthenticated, async (req, res) => {
 // display all books
 homeRouter.get('/books', async (req, res) => {
   try {
-    const bookData = await Book.findAll({})
+    const bookData = await Book.findAll({
+      order: [[['title', 'DESC']]],
+    })
     const books = bookData.map((book) => book.get({ plain: true }))
     res.render('displayAllBooks', { layout: 'main', books })
   } catch (err) {

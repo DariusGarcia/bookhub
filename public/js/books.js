@@ -33,7 +33,7 @@ if (newBookForm) {
 // UPDATE single book submit handler
 const updateBookFormHandler = async function (e) {
   e.preventDefault()
-  updateSingleBook()
+  const bookId = document.querySelector('#hidden-book-id').value
   const title = document.querySelector('#book-form-title-input').value
   const author = document.querySelector('#book-form-author-input').value
   const genre = document.querySelector('#book-form-genre-input').value
@@ -44,20 +44,19 @@ const updateBookFormHandler = async function (e) {
     '#book-form-datePublished-input'
   ).value
 
-  async function updateSingleBook() {
-    await fetch('/api/books/', {
-      method: 'PUT',
-      body: JSON.stringify({
-        title,
-        author,
-        genre,
-        description,
-        publishingDate,
-      }),
-      headers: { 'Content-Type': 'application/json' },
-    })
-    document.location.replace('/')
-  }
+  await fetch(`/api/books/${bookId}`, {
+    method: 'PUT',
+    body: JSON.stringify({
+      title,
+      author,
+      genre,
+      description,
+      publishingDate,
+    }),
+    headers: { 'Content-Type': 'application/json' },
+  })
+  console.log('book updated')
+  document.location.replace('/books')
 }
 
 // add update book handler function to book form event listener

@@ -15,7 +15,6 @@ Book.init(
     title: {
       type: DataTypes.STRING,
       allowNull: false,
-      // unique: true,
     },
     author: {
       type: DataTypes.STRING,
@@ -23,11 +22,11 @@ Book.init(
     },
     description: {
       type: DataTypes.TEXT,
-      allowNull: true,
+      allowNull: false,
     },
     genre: {
       type: DataTypes.STRING,
-      allowNull: true,
+      allowNull: false,
     },
     publishingDate: {
       type: DataTypes.STRING,
@@ -39,11 +38,19 @@ Book.init(
       // hook to hash password before instantiating User model
       beforeCreate: async (book) => {
         const cleanedBook = book.title.trim()
+        book.author.trim()
+        book.genre.trim()
+        book.description.trim()
+        book.publishingDate.trim()
         return cleanedBook
       },
       // hook to hash password before updating the User model
       beforeUpdate: async (book) => {
         const cleanedBook = book.title.trim()
+        book.author.trim()
+        book.genre.trim()
+        book.description.trim()
+        book.publishingDate.trim()
         return cleanedBook
       },
     },
