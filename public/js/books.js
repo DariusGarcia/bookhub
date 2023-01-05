@@ -1,4 +1,4 @@
-// CREATE a new book function handler
+// CREATE a new book submit handler
 const newBookFormHandler = async function (e) {
   e.preventDefault()
 
@@ -33,7 +33,7 @@ if (bookForm) {
   bookForm.addEventListener('submit', newBookFormHandler)
 }
 
-// update single book function handler
+// UPDATE single book submit handler
 const updateBookFormHandler = async function (e) {
   e.preventDefault()
 
