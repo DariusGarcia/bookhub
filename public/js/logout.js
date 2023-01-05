@@ -10,8 +10,11 @@ const logout = async function (event) {
     alert('Successfully logged out.')
     document.location.replace('/')
   } else {
-    alert('Failed to log out')
+    alert('Failed to log out. Please try again.')
   }
 }
 
-document.querySelector('#logout-link').addEventListener('click', logout)
+const logoutBtn = document.querySelector('#logout-link')
+if (logoutBtn) {
+  logoutBtn.addEventListener('click', logout)
+}
