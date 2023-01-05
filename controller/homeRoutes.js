@@ -26,7 +26,17 @@ homeRouter.get('/books', async (req, res) => {
   try {
     const bookData = await Book.findAll({})
     const books = bookData.map((book) => book.get({ plain: true }))
-    res.render('displayBooks', { layout: 'main', books })
+    res.render('displayAllBooks', { layout: 'main', books })
+  } catch (err) {
+    res.status(500).json(err)
+  }
+})
+// display add a book page
+homeRouter.get('/books/add', async (req, res) => {
+  try {
+    const bookData = await Book.findAll({})
+    const books = bookData.map((book) => book.get({ plain: true }))
+    res.render('addNewBook', { layout: 'main', books })
   } catch (err) {
     res.status(500).json(err)
   }

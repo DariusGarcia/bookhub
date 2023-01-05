@@ -1,7 +1,6 @@
 // CREATE a new book submit handler
 const newBookFormHandler = async function (e) {
   e.preventDefault()
-  fetchAllBooks()
   const title = document.querySelector('#book-form-title-input').value
   const author = document.querySelector('#book-form-author-input').value
   const genre = document.querySelector('#book-form-genre-input').value
@@ -12,20 +11,18 @@ const newBookFormHandler = async function (e) {
     '#book-form-description-input'
   ).value
 
-  async function fetchAllBooks() {
-    await fetch('/api/books', {
-      method: 'POST',
-      body: JSON.stringify({
-        title,
-        author,
-        genre,
-        description,
-        publishingDate,
-      }),
-      headers: { 'Content-Type': 'application/json' },
-    })
-    document.location.replace('/')
-  }
+  await fetch('/api/books', {
+    method: 'POST',
+    body: JSON.stringify({
+      title,
+      author,
+      genre,
+      description,
+      publishingDate,
+    }),
+    headers: { 'Content-Type': 'application/json' },
+  })
+  document.location.replace('/')
 }
 // add new book handler function to book form event listener
 const newBookForm = document.querySelector('#book-form')

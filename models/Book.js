@@ -15,6 +15,7 @@ Book.init(
     title: {
       type: DataTypes.STRING,
       allowNull: false,
+      // unique: true,
     },
     author: {
       type: DataTypes.STRING,
@@ -37,17 +38,12 @@ Book.init(
     hooks: {
       // hook to hash password before instantiating User model
       beforeCreate: async (book) => {
-        const cleanedBook = book.map((key) => {
-          key.trim()
-        })
-
+        const cleanedBook = book.title.trim()
         return cleanedBook
       },
       // hook to hash password before updating the User model
       beforeUpdate: async (book) => {
-        const cleanedBook = book.map((key) => {
-          key.trim()
-        })
+        const cleanedBook = book.title.trim()
         return cleanedBook
       },
     },
