@@ -1,39 +1,38 @@
-// fetch book by title
+// fetch book by query filter
 const searchFormContainer = document.querySelector('#search-form')
 const searchBtn = document.querySelector('#search-btn')
 
 const filterHandler = async function (e) {
   e.preventDefault()
-  console.log('hello')
-  const dropdown = document.querySelector('#searchOptions')
+  const searchFilterDropdown = document.querySelector('#searchOptions')
   const searchQueryValue = document.querySelector('#search-input').value
 
   // Get the selected option's index
-  const selectedIndex = dropdown.selectedIndex
+  const selectedIndex = searchFilterDropdown.selectedIndex
 
   // Get the selected option's value
-  let selectedValue = dropdown.options[selectedIndex].value
+  let selectedDropdownFilter = searchFilterDropdown.options[selectedIndex].value
 
-  let encodedUri = searchQueryValue
-
-  let selectedOption = null
-  if (selectedValue === 'title') {
-    selectedOption = 'title'
-  } else if (selectedValue === 'author') {
-    selectedOption = 'author'
-  } else if (selectedValue) {
-    selectedOption = 'genre'
+  let searchFilter = null
+  switch (selectedDropdownFilter) {
+    case 'title':
+      searchFilter = 'title'
+      break
+    case 'author':
+      searchFilter = 'author'
+      break
+    case 'genre':
+      searchFilter = 'genre'
+      break
+    default:
+      searchFilter = 'title'
   }
 
-  await fetch(`/api/books/${selectedOption}/${encodedUri}`)
+  await fetch(`/api/books/${searchFilter}/${searchQueryValue}`)
     .then((data) => data.json())
     .then((res) => console.log(res))
     .catch((err) => console.log(err))
-
-  console.log(encodedUri)
-
   //   document.location.replace('/')
 }
-// add new book handler function to book form event listener
 
 searchBtn.addEventListener('click', filterHandler)
