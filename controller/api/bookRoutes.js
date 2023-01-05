@@ -41,6 +41,7 @@ bookRouter.put('/:id', async (req, res) => {
     const [singleBook] = await Book.update(req.body, {
       where: { id: bookId },
     })
+
     // check if there were any updates to the book
     if (singleBook > 0) {
       res
