@@ -1,23 +1,23 @@
 const signUpHandler = async function (event) {
   event.preventDefault()
 
-  const newUser = document.querySelector('#username-input-login')
-  const newPassword = document.querySelector('#password-input-login')
+  const username = document.querySelector('#username-input-login').value
+  const password = document.querySelector('#password-input-login').value
 
-  const fetchLogin = await fetch('/api/user/register', {
+  const fetchRegisterEndpoint = await fetch('/api/user/register', {
     method: 'POST',
     body: JSON.stringify({
-      username: newUser.value,
-      password: newPassword.value,
+      username,
+      password,
     }),
     headers: { 'Content-type': 'application/json' },
   })
 
-  if (fetchLogin.ok) {
-    alert('success')
+  if (fetchRegisterEndpoint.ok) {
+    alert(`Successfully registered new user: ${username}!`)
     document.location.replace('/login')
   } else {
-    alert('Error signing up... Please try again.')
+    alert('Error signing up.\nPlease try again.')
   }
 }
 

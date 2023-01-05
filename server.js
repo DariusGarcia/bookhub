@@ -4,13 +4,13 @@ const express = require('express')
 const session = require('express-session')
 const expressHandleBars = require('express-handlebars')
 const routes = require('./controller')
-
 const sequelize = require('./config/connection')
 const SequelizeStore = require('connect-session-sequelize')(session.Store)
 
 const app = express()
 const PORT = process.env.PORT || 3001
 
+// express session options
 const sess = {
   secret: '74vLqUS50mP4FNlPzfqd42IBnoL34823',
   cookie: {
@@ -35,6 +35,10 @@ app.use(express.urlencoded({ extended: true }))
 app.use(routes)
 app.use(express.static(path.join(__dirname, 'public')))
 
-sequelize.sync({ alter: true }).then(() => {
-  app.listen(PORT, () => console.log(`Now listening on ${PORT}!`))
+sequelize.sync({ force: false }).then(() => {
+  app.listen(PORT, () =>
+    console.log(
+      `\n------------------------\nSuccessfully connected to SQL database \nNow listening on port: ${PORT}!\n------------------------`
+    )
+  )
 })

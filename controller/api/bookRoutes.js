@@ -13,9 +13,10 @@ bookRouter.get('/', async (req, res) => {
 
 // POST a new book
 bookRouter.post('/', async (req, res) => {
+  const bookInformation = { ...req.body }
   try {
     const newBook = await Book.create({
-      ...req.body,
+      bookInformation,
       // userId: req.session.userId,
     })
     res.json(newBook)
@@ -44,7 +45,9 @@ bookRouter.put('/:id', async (req, res) => {
     })
     // check if there were any updates to the book
     if (singleBook > 0) {
-      res.status(200)
+      res
+        .status(200)
+        .json({ message: `Successfully updated book ID: ${bookId}` })
     } else {
       res
         .status(404)
@@ -68,9 +71,10 @@ bookRouter.delete('/:id', async (req, res) => {
       res.status(404).json({ message: 'No book found with this id!' })
       return
     }
-    res.status(200).json({ message: 'Book deleted successfully' })
+    res.status(200).json({ message: `Book: ${bookId} successfully deleted!` })
   } catch (err) {
     res.status(500).json(err)
   }
 })
+
 module.exports = bookRouter

@@ -185,8 +185,6 @@ body {
 .auth-btn:hover {
     opacity: 70%;
     transform: scale(.97);
-    transform: translateY(5px);
-
     transition-duration: 300ms;
 }
 

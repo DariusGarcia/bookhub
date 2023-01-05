@@ -1,7 +1,6 @@
 // CREATE a new book submit handler
 const newBookFormHandler = async function (e) {
   e.preventDefault()
-
   const title = document.querySelector('#book-form-title-input').value
   const author = document.querySelector('#book-form-author-input').value
   const genre = document.querySelector('#book-form-genre-input').value
@@ -23,12 +22,10 @@ const newBookFormHandler = async function (e) {
     }),
     headers: { 'Content-Type': 'application/json' },
   })
-
   document.location.replace('/')
 }
-
+// add new book handler function to book form event listener
 const bookForm = document.querySelector('#book-form')
-
 if (bookForm) {
   bookForm.addEventListener('submit', newBookFormHandler)
 }
@@ -36,7 +33,6 @@ if (bookForm) {
 // UPDATE single book submit handler
 const updateBookFormHandler = async function (e) {
   e.preventDefault()
-
   const title = document.querySelector('#book-form-title-input').value
   const author = document.querySelector('#book-form-author-input').value
   const genre = document.querySelector('#book-form-genre-input').value
@@ -58,12 +54,10 @@ const updateBookFormHandler = async function (e) {
     }),
     headers: { 'Content-Type': 'application/json' },
   })
-
   document.location.replace('/')
 }
-
+// add update book handler function to book form event listener
 const updateBookForm = document.querySelector('#update-book-form')
-
 if (updateBookForm) {
   updateBookForm.addEventListener('submit', updateBookFormHandler)
 }

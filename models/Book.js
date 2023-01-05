@@ -37,20 +37,17 @@ Book.init(
     hooks: {
       // hook to hash password before instantiating User model
       beforeCreate: async (book) => {
-        const cleanedBook = book.title.trim()
-        cleanedBook = book.author.trim()
-        cleanedBook = book.description.trim()
-        cleanedBook = book.genre.trim()
-        cleanedBook = book.publishingDate.trim()
+        const cleanedBook = book.map((key) => {
+          key.trim()
+        })
+
         return cleanedBook
       },
       // hook to hash password before updating the User model
       beforeUpdate: async (book) => {
-        const cleanedBook = book.title.trim()
-        cleanedBook = book.author.trim()
-        cleanedBook = book.description.trim()
-        cleanedBook = book.genre.trim()
-        cleanedBook = book.publishingDate.trim()
+        const cleanedBook = book.map((key) => {
+          key.trim()
+        })
         return cleanedBook
       },
     },
