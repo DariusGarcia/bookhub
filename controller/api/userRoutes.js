@@ -15,8 +15,8 @@ userRouter.post('/register', async (req, res) => {
       req.session.userId = newUser.id
       req.session.username = newUser.username
       req.session.loggedIn = true
-      res.json(newUser)
     })
+    res.json(newUser)
   } catch (err) {
     res.status(500).json(err)
   }
@@ -47,8 +47,8 @@ userRouter.post('/login', async (req, res) => {
       req.session.userID = existingUser.id
       req.session.username = existingUser.username
       req.session.loggedIn = true
-      res.json({ existingUser, message: 'You are now logged in!' })
     })
+    res.json({ existingUser, message: 'You are now logged in!' })
   } catch (err) {
     res
       .status(400)
