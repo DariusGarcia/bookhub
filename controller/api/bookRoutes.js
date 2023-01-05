@@ -76,4 +76,53 @@ bookRouter.delete('/:id', async (req, res) => {
   }
 })
 
+
+
+// find ALL books by genre
+bookRouter.get('/genre/:genre', async (req, res) => {
+  const genreId = req.params.genre
+  try {
+    const allBooksByGenre = await Book.findAll({
+      where: {
+        genre: genreId,
+      }
+    })
+    res.json(allBooksByGenre)
+  } catch (err) {
+    res.status(400).json(err)
+  }
+})
+
+// find ALL books by title
+bookRouter.get('/title/:title', async (req, res) => {
+  const titleId = req.params.title
+  try {
+    const allBooksByTitle = await Book.findAll({
+      where: {
+        title: titleId,
+      }
+    })
+    res.json(allBooksByTitle)
+  } catch (err) {
+    res.status(400).json(err)
+  }
+})
+
+// find ALL books by author
+bookRouter.get('/author/:author', async (req, res) => {
+  const authorId = req.params.author
+  try {
+    const allBooksByAuthor = await Book.findAll({
+      where: {
+        author: authorId,
+      }
+    })
+    res.json(allBooksByAuthor)
+  } catch (err) {
+    res.status(400).json(err)
+  }
+})
+
+
+
 module.exports = bookRouter
