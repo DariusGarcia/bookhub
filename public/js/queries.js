@@ -1,35 +1,39 @@
-// CREATE a new book submit handler
+// fetch book by title
+const searchFormContainer = document.querySelector('#search-form')
+const searchBtn = document.querySelector('#search-btn')
+
 const filterHandler = async function (e) {
   e.preventDefault()
+  console.log('hello')
+  const dropdown = document.querySelector('#searchOptions')
+  const searchQueryValue = document.querySelector('#search-input').value
 
-  const selectedOption = document.querySelector('#searchOptions').value
-  const title = document.querySelector('#book-form-title-input').value
-  const author = document.querySelector('#book-form-author-input').value
-  const genre = document.querySelector('#book-form-genre-input').value
-  const publishingDate = document.querySelector(
-    '#book-form-datePublished-input'
-  ).value
-  const description = document.querySelector(
-    '#book-form-description-input'
-  ).value
+  // Get the selected option's index
+  const selectedIndex = dropdown.selectedIndex
 
-  await fetch('/api/books', {
-    method: 'POST',
-    body: JSON.stringify({
-      title,
-      author,
-      genre,
-      description,
-      publishingDate,
-    }),
-    headers: { 'Content-Type': 'application/json' },
-  })
-  document.location.replace('/')
+  // Get the selected option's value
+  let selectedValue = dropdown.options[selectedIndex].value
+
+  let encodedUri = searchQueryValue
+
+  let selectedOption = null
+  if (selectedValue === 'title') {
+    selectedOption = 'title'
+  } else if (selectedValue === 'author') {
+    selectedOption = 'author'
+  } else if (selectedValue) {
+    selectedOption = 'genre'
+  }
+
+  await fetch(`/api/books/${selectedOption}/${encodedUri}`)
+    .then((data) => data.json())
+    .then((res) => console.log(res))
+    .catch((err) => console.log(err))
+
+  console.log(encodedUri)
+
+  //   document.location.replace('/')
 }
 // add new book handler function to book form event listener
-const newBookForm = document.querySelector('#searchedOptions')
-if (newBookForm) {
-  newBookForm.addEventListener('submit', newBookFormHandler)
-}
 
-const titleId = encodeURIComponent(req.params.title)
+searchBtn.addEventListener('click', filterHandler)
