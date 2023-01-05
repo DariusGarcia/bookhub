@@ -3,9 +3,9 @@
 :root {
     /* colors */
     --btn: rgb(4, 110, 209);
-    --darkGrey: #36383F;
+    --darkGrey: white;
     --greyHover: #85888C;
-    --lightGrey: #f9f9f9;
+    --lightGrey: black;
 }
 
 *, *::before, *::after {
@@ -19,11 +19,12 @@ body {
     margin: 0;
 }
 
-/* Navbar */
 .content {
-    height: 600px;
-    display: grid;
-    place-items: center;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
 }
 
 /* Header */
@@ -32,13 +33,14 @@ body {
     position: sticky;
     top: 0;
     width: 100%;
+    z-index: 50;
 }
 
 /* Logo */
 .logo {
     display: inline-block;
     color: var(--lightGrey);
-    font-size: 3rem;
+    font-size: 1.2rem;
     margin-left: 1.125rem;
     text-decoration: none;
 }
