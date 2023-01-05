@@ -3,17 +3,18 @@ const { User } = require('../../models')
 
 // CREATE new user
 userRouter.post('/register', async (req, res) => {
+  const password = req.body.password
+  const username = req.body.username
   try {
     const newUser = await User.create({
-      username: req.body.username,
-      password: req.body.password,
+      username: username,
+      password: password,
     })
-
+    // save user info to server-side session storage
     req.session.save(() => {
       req.session.userId = newUser.id
       req.session.username = newUser.username
       req.session.loggedIn = true
-
       res.json(newUser)
     })
   } catch (err) {
@@ -21,37 +22,44 @@ userRouter.post('/register', async (req, res) => {
   }
 })
 
-// login user
+// LOGIN user
 userRouter.post('/login', async (req, res) => {
+  const password = req.body.password
+  const username = req.body.username
   try {
-    const user = await User.findOne({
+    const existingUser = await User.findOne({
       where: {
-        username: req.body.username,
+        username: username,
       },
     })
-    if (!user) {
-      res.status(400).json({ message: 'No user account found.' })
+    if (!existingUser) {
+      res
+        .status(400)
+        .json({ message: 'No existing user account found. Please try again.' })
     }
-
-    const isValidPassword = user.comparePassword(req.body.password)
+    // check if passwords match
+    const isValidPassword = existingUser.comparePassword(password)
     if (!isValidPassword) {
-      res.status(400).json({ message: 'No user account found.' })
+      res.status(400).json({ message: 'Wrong password.' })
     }
-
+    // save user info to server-side session storage
     req.session.save(() => {
-      req.session.userID = user.id
-      req.session.username = user.username
-      req.session.loggedIn = false
-
-      res.json({ user, message: 'You are now logged in!' })
+      req.session.userID = existingUser.id
+      req.session.username = existingUser.username
+      req.session.loggedIn = true
+      res.json({ existingUser, message: 'You are now logged in!' })
     })
   } catch (err) {
-    res.status(400).json({ message: 'No user account found.' })
+    res
+      .status(400)
+      .json({ message: 'No user account found. Please try again.' })
   }
 })
 
+// LOGOUT user
 userRouter.post('/logout', (req, res) => {
-  if (req.session.loggedIn) {
+  const loggedIn = req.session.loggedIn
+  if (loggedIn) {
     req.session.destroy(() => {
       res.status(204).end()
     })
@@ -59,4 +67,5 @@ userRouter.post('/logout', (req, res) => {
     res.status(404).end()
   }
 })
+
 module.exports = userRouter
