@@ -1,0 +1,61 @@
+<section class='flex flex-col mt-12 items-center w-full h-full'>
+    <header class="my-2"><h1 class="text-2xl font-bold">Add a new book</h1></header>
+  <div class='md:w-3/5 bg-gray-200'>
+    <form class='p-2 md:p-4 text-black' id='book-form'>
+      <div class='mb-6'>
+        <input
+          id='book-form-title-input'
+          type='text'
+          placeholder='Book Title'
+          class='text-black border-[f0f0f0] focus:border-primary w-full rounded border py-3 px-2 text-base outline-none focus-visible:shadow-none'
+        />
+      </div>
+      <div class='mb-6'>
+        <input
+          id='book-form-author-input'
+          type='text'
+          placeholder='Author Name'
+          class='text-body-color border-[f0f0f0] focus:border-primary w-full rounded border py-3 px-2 text-base outline-none focus-visible:shadow-none'
+        />
+      </div>
+      <div class='mb-6'>
+        <input
+          id='book-form-genre-input'
+          type='text'
+          placeholder='Genre'
+          class='text-body-color border-[f0f0f0] focus:border-primary w-full rounded border py-3 px-2 text-base outline-none focus-visible:shadow-none'
+        />
+      </div>
+      <div class='mb-6'>
+        <label for="date-published">Date published</label>
+        <input
+          id='book-form-datePublished-input'
+          type='text'
+          placeholder='Date published'
+          class='text-body-color border-[f0f0f0] focus:border-primary w-full rounded border py-3 px-2 text-base outline-none focus-visible:shadow-none'
+        />
+      </div>
+      <div class='mb-6'>
+        <label for="description">Description</label>
+        <textarea
+          id='book-form-description-input'
+          rows='6'
+          placeholder='Description'
+          class='text-body-color focus:border-primary w-full resize-none rounded border py-3 px-2 text-base outline-none focus-visible:shadow-none'
+        >
+        </textarea>
+      </div>
+      <div class="w-full flex justify-center">
+        <button
+          id='book-submit-btn'
+          type='submit'
+          class=' bg-blue-400 border-primary w-36 md:w-48 rounded-md border p-3 text-white  hover:scale-75 hover:bg-opacity-90'
+        >
+          Add Book
+        </button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<script src='/js/books.js'></script>

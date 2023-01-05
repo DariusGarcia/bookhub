@@ -10,27 +10,25 @@ bookRouter.get('/', async (req, res) => {
     res.status(400).json(err)
   }
 })
-
-// POST a new book
-bookRouter.post('/', async (req, res) => {
-  const bookInformation = { ...req.body }
-  try {
-    const newBook = await Book.create({
-      bookInformation,
-      // userId: req.session.userId,
-    })
-    res.json(newBook)
-  } catch (err) {
-    res.status(400).json(err)
-  }
-})
-
 // GET a single book
 bookRouter.get('/:id', async (req, res) => {
   const bookId = req.params.id
   try {
     const singleBook = await Book.findByPk(bookId)
     res.json(singleBook)
+  } catch (err) {
+    res.status(400).json(err)
+  }
+})
+
+// POST a new book
+bookRouter.post('/', async (req, res) => {
+  try {
+    const newBook = await Book.create({
+      ...req.body,
+      // userId: req.session.userId,
+    })
+    res.json(newBook)
   } catch (err) {
     res.status(400).json(err)
   }
