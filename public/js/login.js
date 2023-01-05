@@ -1,23 +1,23 @@
-const loginHandler = async function (event) {
-  event.preventDefault()
+const loginHandler = async function (e) {
+  e.preventDefault()
 
-  const usernameElement = document.querySelector('#username-input-login')
-  const passwordElement = document.querySelector('#password-input-login')
+  const username = document.querySelector('#username-input-login').value
+  const password = document.querySelector('#password-input-login').value
 
-  const fetchLogin = await fetch('/api/user/login', {
+  const fetchLoginEndpoint = await fetch('/api/user/login', {
     method: 'POST',
     body: JSON.stringify({
-      username: usernameElement.value,
-      password: passwordElement.value,
+      username,
+      password,
     }),
     headers: { 'Content-type': 'application/json' },
   })
 
-  if (fetchLogin.ok) {
-    alert('success')
+  if (fetchLoginEndpoint.ok) {
+    alert(`Successfully logged in user: ${username}!`)
     document.location.replace('/')
   } else {
-    alert('Error logging in... Please try again.')
+    alert('Error logging in.\nPlease try again.')
   }
 }
 
