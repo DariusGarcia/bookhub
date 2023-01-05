@@ -6,6 +6,7 @@ const expressHandleBars = require('express-handlebars')
 const routes = require('./controller')
 const sequelize = require('./config/connection')
 const SequelizeStore = require('connect-session-sequelize')(session.Store)
+const helpers = require('./utils/helpers')
 
 const app = express()
 const PORT = process.env.PORT || 3001
@@ -26,7 +27,7 @@ const sess = {
 app.use(session(sess))
 
 // set express engine to handlebars
-const hbs = expressHandleBars.create()
+const hbs = expressHandleBars.create({ helpers })
 app.engine('handlebars', hbs.engine)
 app.set('view engine', 'handlebars')
 app.set('views', './views')

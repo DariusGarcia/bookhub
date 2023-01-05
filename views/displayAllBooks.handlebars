@@ -50,12 +50,13 @@
             src='https://images.unsplash.com/photo-1555982105-d25af4182e4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&h=400&q=80'
           />
           <div class=' flex items-center justify-between'>
-            <p class='mt-1 font-semibold'>{{title}}</p>
+            <p class='mt-1 font-semibold'>{{format_title title}}</p>
            
           </div>
           <span class="flex flex-col gap-2">
           <p class='mt-1 rounded-sm text-gray-900'>by {{author}}</p>
           <p class=' rounded-sm text-gray-900 text-sm'>Published in {{publishingDate}}</p>
+          <p class=' rounded-sm text-gray-900 text-sm'> {{format_body description}}...</p>
           <div class="flex flex-row justify-between"><p class='px-2 rounded-md text-blue-500 border-2 border-blue-500 w-min'>{{genre}}</p></span>
            <svg
               class='h-6 w-6 fill-current text-gray-500 hover:text-black'
