@@ -1,4 +1,5 @@
 const homeRouter = require('express').Router()
+const isAuthenticated = require('../utils/auth')
 const { Book } = require('../models/')
 
 // display home page that displays all books
@@ -12,7 +13,7 @@ homeRouter.get('/', async (req, res) => {
   }
 })
 // display home page that displays all books
-homeRouter.get('/dashboard', async (req, res) => {
+homeRouter.get('/dashboard', isAuthenticated, async (req, res) => {
   try {
     const bookData = await Book.findAll({})
     const books = bookData.map((book) => book.get({ plain: true }))
@@ -32,7 +33,7 @@ homeRouter.get('/books', async (req, res) => {
   }
 })
 // display add a book page
-homeRouter.get('/books/add', async (req, res) => {
+homeRouter.get('/books/add', isAuthenticated, async (req, res) => {
   try {
     const bookData = await Book.findAll({})
     const books = bookData.map((book) => book.get({ plain: true }))
@@ -61,7 +62,7 @@ homeRouter.get('/signup', async (req, res) => {
 })
 
 // display single book page
-homeRouter.get('/:id', async (req, res) => {
+homeRouter.get('/:id', isAuthenticated, async (req, res) => {
   const bookId = req.params.id
   try {
     const singleBook = await Book.findByPk(bookId)
@@ -75,7 +76,7 @@ homeRouter.get('/:id', async (req, res) => {
 })
 
 // display update book page
-homeRouter.get('/edit/:id', async (req, res) => {
+homeRouter.get('/edit/:id', isAuthenticated, async (req, res) => {
   const bookId = req.params.id
   try {
     const singleBook = await Book.findByPk(bookId)
