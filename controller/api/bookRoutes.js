@@ -1,4 +1,5 @@
 const bookRouter = require('express').Router()
+const { urlencoded } = require('express')
 const { Book } = require('../../models')
 
 // find ALL books
@@ -76,8 +77,6 @@ bookRouter.delete('/:id', async (req, res) => {
   }
 })
 
-
-
 // find ALL books by genre
 bookRouter.get('/genre/:genre', async (req, res) => {
   const genreId = req.params.genre
@@ -85,7 +84,7 @@ bookRouter.get('/genre/:genre', async (req, res) => {
     const allBooksByGenre = await Book.findAll({
       where: {
         genre: genreId,
-      }
+      },
     })
     res.json(allBooksByGenre)
   } catch (err) {
@@ -100,7 +99,7 @@ bookRouter.get('/title/:title', async (req, res) => {
     const allBooksByTitle = await Book.findAll({
       where: {
         title: titleId,
-      }
+      },
     })
     res.json(allBooksByTitle)
   } catch (err) {
@@ -115,14 +114,12 @@ bookRouter.get('/author/:author', async (req, res) => {
     const allBooksByAuthor = await Book.findAll({
       where: {
         author: authorId,
-      }
+      },
     })
     res.json(allBooksByAuthor)
   } catch (err) {
     res.status(400).json(err)
   }
 })
-
-
 
 module.exports = bookRouter
