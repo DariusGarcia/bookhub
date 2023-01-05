@@ -31,7 +31,8 @@ bookRouter.get('/:id', async (req, res) => {
   } catch (err) {
     res.status(400).json(err)
   }
-});
+})
+
 // UPDATE a single book
 bookRouter.put('/:id', async (req, res) => {
   try {
@@ -47,23 +48,23 @@ bookRouter.put('/:id', async (req, res) => {
   } catch (err) {
     res.status(500).json(err)
   }
-});
+})
 // DELETE a single book
 bookRouter.delete('/:id', async (req, res) => {
   try {
     const singleBook = Book.destroy({
       where: {
-        id: req.params.id
-      }
-    });
-    
+        id: req.params.id,
+      },
+    })
+
     if (!singleBook) {
-      res.status(404).json({ message: 'No book found with this id!'});
-      return;
+      res.status(404).json({ message: 'No book found with this id!' })
+      return
     }
-    res.status(200).json({message: 'deleted successfully'});
-  } catch(err) {
-    res.status(500).json(err);
+    res.status(200).json({ message: 'deleted successfully' })
+  } catch (err) {
+    res.status(500).json(err)
   }
-});
+})
 module.exports = bookRouter

@@ -1,4 +1,5 @@
-const bookFormHandler = async function (e) {
+// CREATE a new book submit handler
+const newBookFormHandler = async function (e) {
   e.preventDefault()
 
   const title = document.querySelector('#book-form-title-input').value
@@ -29,33 +30,36 @@ const bookFormHandler = async function (e) {
 const bookForm = document.querySelector('#book-form')
 
 if (bookForm) {
-  bookForm.addEventListener('submit', bookFormHandler)
+  bookForm.addEventListener('submit', newBookFormHandler)
 }
 
-
-const updateBookFormHandler = aysnc function (e) {
+// UPDATE single book submit handler
+const updateBookFormHandler = async function (e) {
   e.preventDefault()
 
   const title = document.querySelector('#book-form-title-input').value
   const author = document.querySelector('#book-form-author-input').value
   const genre = document.querySelector('#book-form-genre-input').value
-  const description = document.querySelector('#book-form-description-input').value
-  const publishingDate = document.querySelector('#book-form-datePublished-input').value
+  const description = document.querySelector(
+    '#book-form-description-input'
+  ).value
+  const publishingDate = document.querySelector(
+    '#book-form-datePublished-input'
+  ).value
 
-  await fetch ('/api/books', {
+  await fetch('/api/books/', {
     method: 'PUT',
-    body: JSON.stringify{(
+    body: JSON.stringify({
       title,
       author,
       genre,
       description,
-      publishingDate
-    )}
-    headers: { 'Content-Type': 'application/json'},
+      publishingDate,
+    }),
+    headers: { 'Content-Type': 'application/json' },
   })
 
   document.location.replace('/')
-
 }
 
 const updateBookForm = document.querySelector('#update-book-form')
