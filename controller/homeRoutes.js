@@ -6,6 +6,26 @@ homeRouter.get('/', async (req, res) => {
   try {
     const bookData = await Book.findAll({})
     const books = bookData.map((book) => book.get({ plain: true }))
+    res.render('landing', { layout: 'main', books })
+  } catch (err) {
+    res.status(500).json(err)
+  }
+})
+// display home page that displays all books
+homeRouter.get('/dashboard', async (req, res) => {
+  try {
+    const bookData = await Book.findAll({})
+    const books = bookData.map((book) => book.get({ plain: true }))
+    res.render('dashboard', { layout: 'main', books })
+  } catch (err) {
+    res.status(500).json(err)
+  }
+})
+// display all books
+homeRouter.get('/books', async (req, res) => {
+  try {
+    const bookData = await Book.findAll({})
+    const books = bookData.map((book) => book.get({ plain: true }))
     res.render('displayBooks', { layout: 'main', books })
   } catch (err) {
     res.status(500).json(err)
