@@ -64,3 +64,12 @@ const updateBookForm = document.querySelector('#update-book-form')
 if (updateBookForm) {
   updateBookForm.addEventListener('submit', updateBookFormHandler)
 }
+
+async function fetchTrending() {
+  const data = await fetch('/api/tags/2')
+    .then((data) => data.json())
+    .catch((err) => console.log(err))
+  console.log(data)
+}
+
+fetchTrending()

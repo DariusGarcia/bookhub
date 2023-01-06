@@ -1,10 +1,17 @@
 const bookRouter = require('express').Router()
-const { Book } = require('../../models')
+const { Book, Tag, BookTag } = require('../../models')
 
 // find ALL books
 bookRouter.get('/', async (req, res) => {
   try {
-    const allBooks = await Book.findAll({})
+    const allBooks = await Book.findAll({
+      include: [
+        {
+          model: Tag,
+          through: BookTag,
+        },
+      ],
+    })
     res.json(allBooks)
   } catch (err) {
     res.status(400).json(err)
