@@ -50,9 +50,7 @@ userRouter.post('/login', async (req, res) => {
       res.json({ existingUser, message: 'You are now logged in!' })
     })
   } catch (err) {
-    res
-      .status(400)
-      .json({ message: 'No user account found. Please try again.' })
+    res.status(500)
   }
 })
 
@@ -60,6 +58,7 @@ userRouter.post('/login', async (req, res) => {
 userRouter.post('/logout', (req, res) => {
   const loggedIn = req.session.loggedIn
   if (loggedIn) {
+    req.session.loggedIn = false
     req.session.destroy(() => {
       res.status(204).end()
     })

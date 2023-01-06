@@ -7,12 +7,23 @@ homeRouter.get('/', async (req, res) => {
   try {
     const bookData = await Book.findAll({})
     const books = bookData.map((book) => book.get({ plain: true }))
-    res.render('landing', { layout: 'main', books })
+    const authStatus = req.session.loggedIn
+    res.render('landing', { layout: 'main', books, authStatus })
   } catch (err) {
     res.status(500).json(err)
   }
 })
 // display home page that displays all books
+homeRouter.get('/dashboard', isAuthenticated, async (req, res) => {
+  try {
+    const bookData = await Book.findAll({})
+    const books = bookData.map((book) => book.get({ plain: true }))
+    res.render('dashboard', { layout: 'main', books })
+  } catch (err) {
+    res.status(500).json(err)
+  }
+})
+// display search books page
 homeRouter.get('/dashboard', isAuthenticated, async (req, res) => {
   try {
     const bookData = await Book.findAll({})
@@ -46,6 +57,9 @@ homeRouter.get('/books/add', isAuthenticated, async (req, res) => {
 })
 // display login page
 homeRouter.get('/login', async (req, res) => {
+  if (req.session.loggedIn) {
+    res.redirect('/books')
+  }
   try {
     res.render('login')
   } catch (err) {
@@ -54,6 +68,9 @@ homeRouter.get('/login', async (req, res) => {
 })
 // display sign-up page
 homeRouter.get('/signup', async (req, res) => {
+  if (req.session.loggedIn) {
+    res.redirect('/books')
+  }
   try {
     res.render('signup')
   } catch (err) {
