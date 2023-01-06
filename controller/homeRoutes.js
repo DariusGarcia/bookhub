@@ -8,7 +8,7 @@ homeRouter.get('/', async (req, res) => {
     const bookData = await Book.findAll({})
     const books = bookData.map((book) => book.get({ plain: true }))
     const authStatus = req.session.loggedIn
-    res.render('landing', { layout: 'main', books, authStatus })
+    res.render('landing', { layout: 'bookDisplay', books, authStatus })
   } catch (err) {
     res.status(500).json(err)
   }
@@ -40,7 +40,7 @@ homeRouter.get('/books', async (req, res) => {
       order: [[['title', 'DESC']]],
     })
     const books = bookData.map((book) => book.get({ plain: true }))
-    res.render('displayAllBooks', { layout: 'main', books })
+    res.render('displayAllBooks', { layout: 'bookDisplay', books })
   } catch (err) {
     res.status(500).json(err)
   }

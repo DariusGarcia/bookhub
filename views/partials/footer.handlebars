@@ -1,19 +1,21 @@
-<footer className='footer'>
-  <div className='nav-container'>
-    <ul>
-      <li className='nav-link'>Home</li>
-      <li className='nav-link'>Books</li>
-      <li className='nav-link'>Dashboard</li>
+<footer class='w-full flex flex-col py-12 h-56 bg-gray-100 justify-center items-center'>
+  <div class='nav-container'>
+    <h1 class='font-bold text-2xl mb-4'>Book Hub</h1>
+  </div>
+  <section class="flex flex-row">
+  <div class='flex flex-row'>
+    <ul class="flex flex-row gap-2">
+      <li class='hover:opacity-70 border-b-2 hover:border-b-black border-b-transparent hover:scale-97 ease-in-out p-2'><a href='/'>Home</a></li>
+      <li class='hover:opacity-70 border-b-2 hover:border-b-black border-b-transparent hover:scale-97 ease-in-out p-2'><a href='/books'>Books</a></li>
+      <li class='hover:opacity-70 border-b-2 hover:border-b-black border-b-transparent hover:scale-97 ease-in-out p-2'><a href='/dashboard'>Dashboard</a></li>
     </ul>
   </div>
-  <div className='nav-container'>
-    <h1 className='nav-title'>Book Hub</h1>
-  </div>
-  <div className='nav-container'>
-    <ul>
-      <li className='nav-link'>Login</li>
-      <li className='nav-link'>Sign up</li>
-      <li className='nav-link'>Logout</li>
+  
+  <div class=''>
+    <ul class='flex flex-row gap-2'>
+      <li class='hover:opacity-70 border-b-2 hover:border-b-black border-b-transparent hover:scale-97 ease-in-out p-2'><a href='/login'>Login</a></li>
+      <li class='hover:opacity-70 border-b-2 hover:border-b-black border-b-transparent hover:scale-97 ease-in-out p-2'><a href='/signup'>Sign Up</a></li>
+      <li class='hover:opacity-70 border-b-2 hover:border-b-black border-b-transparent hover:scale-97 ease-in-out p-2'><a href='/api/user/logout'>Logout</a></li>
     </ul>
-  </div>
+  </div></section>
 </footer>

@@ -18,17 +18,18 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script> tailwind.config = { theme: { extend: {fontFamily: {sans: ['Inter', 'sans-serif'],},} } }</script>
   </head>
-  <body class="bg-white text-gray-600 work-sans leading-normal text-base tracking-normal">
+  <body class="bg-white text-gray-600 work-sans leading-normal text-base tracking-normal ">
    {{> navbar}}
 
     <!-- Main content -->
-    <main class='content'>
+    <main class='content h-full mb-24'>
       {{{body}}}
     </main>
-    {{!-- {{> footer }} --}}
+    
+    {{> footer }}
    
-  <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
+    <script src='/js/login.js'></script>
+    <script src='/js/logout.js'></script>
   </body>
 </html>
-<script src='/js/login.js'></script>
-<script src='/js/logout.js'></script>
