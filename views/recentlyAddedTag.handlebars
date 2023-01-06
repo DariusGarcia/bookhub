@@ -25,12 +25,11 @@
       >All Books</a>
        <a
         href='/books/trending'
-        class=' w-full block font-medium text-center text-xs leading-tight uppercase border-x-0 border-t-0 border-b-2 border-transparent px-6 py-3 my-2 hover:border-transparent hover:bg-gray-100 focus:border-transparent'
+        class='nav-link w-full block font-medium text-center text-xs leading-tight uppercase border-x-0 border-t-0 border-b-2 border-transparent px-6 py-3 my-2 hover:border-transparent hover:bg-gray-100 focus:border-transparent'
       >Trending</a>
       <a
         href='/books/recent'
         class=' w-full block font-medium text-center text-xs leading-tight uppercase border-x-0 border-t-0 border-b-2  px-6 py-3 my-2 text-blue-600 hover:border-b-blue-600 hover:bg-gray-100 focus:border-transparent  active'
-        
       >Recently Added</a>
       <a
         href='/books/popular'
@@ -48,40 +47,7 @@
         id='tabs-top-50'
       >Top 50</a>
   </ul>
-  <div class='tab-content' id='tabs-tabContent'>
-    <div class='tab-pane fade show active' id='tabs-trending'>
-      <section class='flex flex-col justify-center gap-2'>
-        <h1
-          class='text-2xl text-yellow-500 font-bold border-b-2 border-black'
-        >Recently Added Books</h1>
-        {{#each books.Books}}
-          <a
-            href='/{{id}}'
-            class='flex flex-col justify-center bg-gray-50 p-2 rounded-md w-full hover:opacity-70'
-          >
-            <h2 class=''>
-              {{format_title title}}
-            </h2>
-            <p>by {{author}}</p>
-          </a>
-        {{/each}}
-      </section>
-    </div>
-    <div class='tab-pane fade' id='tabs-recnadd'>
-      Recently added
-    </div>
-    <div class='tab-pane fade' id='tabs-mstpopular'>
-      most Popular
-    </div>
-    <div class='tab-pane fade' id='tabs-bs'>
-      B S
-    </div>
-    <div class='tab-pane fade' id='tabs-top50'>
-      TOP 50
-    </div>
-  </div>
-  {{> footer}}
-</section>  
+  
   <div class='' id='tabs-tabContent px-24'>
     <div
       class='tab-pane fade show active'
@@ -91,7 +57,7 @@
         <div class="tab-pane fade show active" id="tabs-trending">
           {{!-- TRENDING BOOKS --}}
           <section class="flex flex-col">
-            <h2 class="text-xl font-semibold text-yellow-500">Recently Added Books</h2>
+            <h2 class="text-xl font-semibold text-yellow-500">Recently Added</h2>
 
             <div class="flex flex-col md:grid md:grid-cols-5 md:gap-4">
             {{#each books.Books}}
@@ -140,5 +106,7 @@
         <div class="tab-pane fade">
           TOP 50
         </div>
+
           </div>
     </section>
+{{> footer}}
