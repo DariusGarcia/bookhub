@@ -124,9 +124,11 @@ homeRouter.get('/books/:tag', async (req, res) => {
       break
     case 'best-seller':
       tagName = 4
+      templateView = 'bestSellerTag'
       break
-    case 'top-50':
+    case 'top50':
       tagName = 5
+      templateView = 'top50Tag'
       break
     default:
       res.redirect('/books')
