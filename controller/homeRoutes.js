@@ -8,7 +8,7 @@ homeRouter.get('/', async (req, res) => {
     const bookData = await Book.findAll({})
     const books = bookData.map((book) => book.get({ plain: true }))
     const authStatus = req.session.loggedIn
-    res.render('landing', { layout: 'main', books, authStatus })
+    res.render('landing', { layout: 'bookDisplay', books, authStatus })
   } catch (err) {
     res.status(500).json(err)
   }

@@ -1,28 +1,4 @@
-{{!-- <div class="container mx-auto w-full px-4 lg:w-1/2 xl:w-8/12">
-  <form id="search-form" class="relative mt-3 rounded-md shadow-sm">
-    <label for="" class="mb-3 block text-base font-medium text-black">
-      Searched by
-    </label>
-    <input type="text" name="value" id="search-input" class="text-body-color border-[f0f0f0] focus:border-primary w-full rounded-md border-gray-300 py-3 px-[14px] text-base outline-none focus-visible:shadow-none" placeholder="please Enter">
-    <div class="absolute inset-y-0 right-0 flex items-center">
-        <label for="searchBar" class="sr-only">searchbar</label>
-          <select id="searchOptions" name="options" class="h-full rounded-md border-transparent bg-transparent py-0 pl-2 pr-7 text-gray-500 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm xl:text-md">
-            <option value="title">Book Title</option>
-            <option value="author">Author Name</option>
-            <option value="genre">Genre</option>
-          </select>
-    </div>  
-    <button id='search-btn' type="submit" class="group relative flex w-full justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
-      <span class="absolute inset-y-0 left-0 flex items-center pl-3">
-        <svg class="fill-current hover:text-black-400" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-          <path d="M10,18c1.846,0,3.543-0.635,4.897-1.688l4.396,4.396l1.414-1.414l-4.396-4.396C17.365,13.543,18,11.846,18,10 c0-4.411-3.589-8-8-8s-8,3.589-8,8S5.589,18,10,18z M10,4c3.309,0,6,2.691,6,6s-2.691,6-6,6s-6-2.691-6-6S6.691,4,10,4z" />
-        </svg>                  
-      </span>
-      Search
-    </button>
-  </form>
-</div> --}}
-<section class='my-4 px-2 md:px-0'>
+<section class='my-4 px-2 md:px-0 h-full'>
   <div class='container mx-auto flex items-center flex-wrap pt-4 pb-12'>
     <nav id='store' class='w-full'>
       <div class='w-full container mx-auto flex flex-wrap items-center justify-between mt-0  py-3'>
@@ -71,121 +47,60 @@
               </div>
             </div>
           </div>
-          {{!-- <div class="collapse" id="genre">
-            <div class="block p-6 rounded-lg shadow-lg bg-white">
-              123456
-            </div>
-          </div> --}}
+         
         </div>
       </div>
     </nav>
-    
-    <section>
-      <ul class=" nav nav-tabs flex flex-col md:flex-row flex-wrap list-none border-b-0 pl-0 mb-4" id="tabs-tab"
-        role="tablist">
-        <li class="nav-item" role="presentation">
-          <a href="#tabs-allbooks" class="
-            nav-link w-full block font-medium text-xs leading-tight uppercase border-x-0 border-t-0 border-b-2 border-transparent
-            px-6 py-3 my-2
-            hover:border-transparent hover:bg-gray-100
-            focus:border-transparent active"
-            id="tabs-all-book" data-bs-toggle="pill" data-bs-target="#tabs-allbooks" role="tab" aria-controls="tabs-allbooks" aria-selected="true">
-            All Books
-          </a>
-        </li>
-        <li class="nav-item" role="presentation">
-          <a href="#tabs-trending" class="
-            nav-link
-            w-full
-            block
-            font-medium
-            text-xs
-            leading-tight
-            uppercase
-            border-x-0 border-t-0 border-b-2 border-transparent
-            px-6
-            py-3
-            my-2
-            hover:border-transparent hover:bg-gray-100
-            focus:border-transparent
-          " id="tabs-trending-book" data-bs-toggle="pill" data-bs-target="#tabs-trending" role="tab"
-            aria-controls="tabs-trending" aria-selected="false">Trending Books</a>
-        </li>
-        <li class="nav-item" role="presentation">
-          <a href="#tabs-recnadd" class="
-            nav-link
-            w-full
-            block
-            font-medium
-            text-xs
-            leading-tight
-            uppercase
-            border-x-0 border-t-0 border-b-2 border-transparent
-            px-6
-            py-3
-            my-2
-            hover:border-transparent hover:bg-gray-100
-            focus:border-transparent
-          " id="tabs-recentlyadded-tab" data-bs-toggle="pill" data-bs-target="#tabs-recnadd" role="tab"
-            aria-controls="tabs-recnadd" aria-selected="false">Recently Added</a>
-        </li>
-        <li class="nav-item" role="presentation">
-          <a href="#tabs-mstpopular" class="
-            nav-link
-            w-full
-            block
-            font-medium
-            text-xs
-            leading-tight
-            uppercase
-            border-x-0 border-t-0 border-b-2 border-transparent
-            px-6
-            py-3
-            my-2
-            hover:border-transparent hover:bg-gray-100
-            focus:border-transparent
-          " id="tabs-mst-popular" data-bs-toggle="pill" data-bs-target="#tabs-mstpopular" role="tab"
-            aria-controls="tabs-mstpopular" aria-selected="false">Most Popular</a>
-        </li>
-        <li class="nav-item" role="presentation">
-          <a href="#tabs-bs" class="
-            nav-link
-            w-full
-            block
-            font-medium
-            text-xs
-            leading-tight
-            uppercase
-            border-x-0 border-t-0 border-b-2 border-transparent
-            px-6
-            py-3
-            my-2
-            hover:border-transparent hover:bg-gray-100
-            focus:border-transparent
-          " id="tabs-best-seller" data-bs-toggle="pill" data-bs-target="#tabs-bs" role="tab"
-            aria-controls="tabs-bs" aria-selected="false">Best Seller</a>
-        </li>
-        <li class="nav-item" role="presentation">
-          <a href="#tabs-top50" class="
-            nav-link
-            w-full
-            block
-            font-medium
-            text-xs
-            leading-tight
-            uppercase
-            border-x-0 border-t-0 border-b-2 border-transparent
-            px-6
-            py-3
-            my-2
-            hover:border-transparent hover:bg-gray-100
-            focus:border-transparent
-          " id="tabs-top-50" data-bs-toggle="pill" data-bs-target="#tabs-top50" role="tab"
-            aria-controls="tabs-top50" aria-selected="false">Top 50</a>
-        </li>
-      </ul>
+    <section class="px-2">
+      <ul
+    class=' flex flex-row md:flex-row  list-none border-b-0 pl-0 mb-4'
+  >
+      <a
+        href='/books'
+        class=' w-full block font-medium text-center text-xs leading-tight uppercase border-x-0 border-t-0 border-b-2  px-6 py-3 my-2 text-blue-600 hover:border-b-blue-600 hover:bg-gray-100 focus:border-transparent active'
+      >
+        All Books
+      </a>
+       <a
+        href='/books/trending'
+        class=' w-full block font-medium text-center text-xs leading-tight uppercase border-x-0 border-t-0 border-b-2 border-transparent px-6 py-3 my-2 hover:border-transparent hover:bg-gray-100 focus:border-transparent'
+      >Trending</a>
+      <a
+        href='/books/recent'
+        class=' w-full block font-medium text-center text-xs leading-tight uppercase border-x-0 border-t-0 border-b-2 border-transparent px-6 py-3 my-2 hover:border-transparent hover:bg-gray-100 focus:border-transparent'
+      >Recently Added</a>
+      <a
+        href='#tabs-mstpopular'
+        class='nav-link w-full block font-medium text-center text-xs leading-tight uppercase border-x-0 border-t-0 border-b-2 border-transparent px-6 py-3 my-2 hover:border-transparent hover:bg-gray-100 focus:border-transparent'
+        id='tabs-mst-popular'
+        data-bs-toggle='pill'
+        data-bs-target='#tabs-mstpopular'
+        role='tab'
+        aria-controls='tabs-mstpopular'
+        aria-selected='false'
+      >Most Popular</a>
+      <a
+        href='#tabs-bs'
+        class='nav-link w-full block font-medium text-center text-xs leading-tight uppercase border-x-0 border-t-0 border-b-2 border-transparent px-6 py-3 my-2 hover:border-transparent hover:bg-gray-100 focus:border-transparent'
+        id='tabs-best-seller'
+        data-bs-toggle='pill'
+        data-bs-target='#tabs-bs'
+        role='tab'
+        aria-controls='tabs-bs'
+        aria-selected='false'
+      >Best Seller</a>
+      <a
+        href='#tabs-top50'
+        class='nav-link w-full block font-medium text-center text-xs leading-tight uppercase border-x-0 border-t-0 border-b-2 border-transparent px-6 py-3 my-2 hover:border-transparent hover:bg-gray-100 focus:border-transparent'
+        id='tabs-top-50'
+        data-bs-toggle='pill'
+        data-bs-target='#tabs-top50'
+        role='tab'
+        aria-controls='tabs-top50'
+        aria-selected='false'
+      >Top 50</a>
+  </ul>
       <div class="tab-content" id="tabs-tabContent">
-
         <div class="tab-pane fade show active" id="tabs-trending" role="tabpanel" aria-labelledby="tabs-trending-book">
           {{!-- All BOOKS --}}
           <section class="flex flex-col">
@@ -193,11 +108,11 @@
 
             <div class="flex flex-col md:grid md:grid-cols-5 md:gap-4">
             {{#each books}}
-              <div class='flex flex-col items-center rounded-sm'>
-                <a class='p-4 hover:bg-gray-50' href={{id}}>
+              <div class='flex flex-col items-center rounded-lg'>
+                <a class='p-4 hover:bg-gray-50 rounded-md' href={{id}}>
                   <img
-                    class='w-48'
-                    src='https://free-images.com/lg/2b6f/comingsoon_png.jpg'
+                    class='w-36'
+                    src='/images/book.png'
                   />
                   <div class=' flex items-center justify-between'>
                     <p class='mt-1 font-semibold'>{{format_title title}}</p>
@@ -240,7 +155,6 @@
         </div>
       </div>
     </section>
-
      
 </section>
 <script src="/js/searchQueries.js"></script>
