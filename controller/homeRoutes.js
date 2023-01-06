@@ -120,6 +120,7 @@ homeRouter.get('/books/:tag', async (req, res) => {
       break
     case 'popular':
       tagName = 3
+      templateView = 'popularTag'
       break
     case 'best-seller':
       tagName = 4
