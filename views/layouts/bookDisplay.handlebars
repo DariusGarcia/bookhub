@@ -12,7 +12,6 @@
     <link rel='stylesheet' href='/css/styles.css' />
     <link rel='stylesheet' href='https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css'/>
     <link href='https://fonts.googleapis.com/css?family=Work+Sans:200,400&display=swap' rel='stylesheet'/>
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css" />
@@ -20,34 +19,16 @@
     <script> tailwind.config = { theme: { extend: {fontFamily: {sans: ['Inter', 'sans-serif'],},} } }</script>
   </head>
   <body class="bg-white text-gray-600 work-sans leading-normal text-base tracking-normal">
-    {{> navbar}}
+   {{> navbar}}
+
     <!-- Main content -->
     <main class='content'>
       {{{body}}}
     </main>
-   {{> footer}}
+    {{!-- {{> footer }} --}}
+   
   <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
   </body>
 </html>
 <script src='/js/login.js'></script>
 <script src='/js/logout.js'></script>
-
-
-{{!-- old hamburger navbar --}}
-    {{!-- <!-- Navigation bar -->
-<header class="header">
-  <!-- Logo -->
-  <a href="#" class="logo">BookHub</a>
-  <!-- Hamburger icon -->
-  <input class="side-menu" type="checkbox" id="side-menu"/>
-  <label class="hamb" for="side-menu"><span class="hamb-line"></span></label>
-  <!-- Menu -->
-  <nav class="nav">
-    <ul class="menu">
-      <li><a class='' href="/">Books</a></li>
-      <li><a href="/books">Dashboard</a></li>
-      <li><a href="/login">Login</a></li>
-      <li><a href='/logout' id='logout-link'>Logout</a></li>
-    </ul>
-  </nav>
-</header> --}}
