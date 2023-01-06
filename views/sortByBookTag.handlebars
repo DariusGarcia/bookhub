@@ -1,0 +1,122 @@
+<section>
+  <ul
+    class='nav nav-tabs flex flex-col md:flex-row flex-wrap list-none border-b-0 pl-0 mb-4'
+    id='tabs-tab3'
+    role='tablist'
+  >
+    <li class='nav-item' role='presentation'>
+      <a
+        href='#tabs-trending'
+        class='nav-link w-full block font-medium text-xs leading-tight uppercase border-x-0 border-t-0 border-b-2 border-transparent px-6 py-3 my-2 hover:border-transparent hover:bg-gray-100 focus:border-transparent active'
+        id='tabs-trending-book'
+        data-bs-toggle='pill'
+        data-bs-target='#tabs-trending'
+        role='tab'
+        aria-controls='tabs-trending'
+        aria-selected='true'
+      >
+        Trending Books
+      </a>
+    </li>
+    <li class='nav-item' role='presentation'>
+      <a
+        href='/recent'
+        class='nav-link w-full block font-medium text-xs leading-tight uppercase border-x-0 border-t-0 border-b-2 border-transparent px-6 py-3 my-2 hover:border-transparent hover:bg-gray-100 focus:border-transparent'
+        id='tabs-recentlyadded-tab'
+        data-bs-toggle='pill'
+        data-bs-target='#tabs-recnadd'
+        role='tab'
+        aria-controls='tabs-recnadd'
+        aria-selected='false'
+      >Recently Added</a>
+    </li>
+    <li class='nav-item' role='presentation'>
+      <a
+        href='#tabs-mstpopular'
+        class='nav-link w-full block font-medium text-xs leading-tight uppercase border-x-0 border-t-0 border-b-2 border-transparent px-6 py-3 my-2 hover:border-transparent hover:bg-gray-100 focus:border-transparent'
+        id='tabs-mst-popular'
+        data-bs-toggle='pill'
+        data-bs-target='#tabs-mstpopular'
+        role='tab'
+        aria-controls='tabs-mstpopular'
+        aria-selected='false'
+      >Most Popular</a>
+    </li>
+    <li class='nav-item' role='presentation'>
+      <a
+        href='#tabs-bs'
+        class='nav-link w-full block font-medium text-xs leading-tight uppercase border-x-0 border-t-0 border-b-2 border-transparent px-6 py-3 my-2 hover:border-transparent hover:bg-gray-100 focus:border-transparent'
+        id='tabs-best-seller'
+        data-bs-toggle='pill'
+        data-bs-target='#tabs-bs'
+        role='tab'
+        aria-controls='tabs-bs'
+        aria-selected='false'
+      >Best Seller</a>
+    </li>
+    <li class='nav-item' role='presentation'>
+      <a
+        href='#tabs-top50'
+        class='nav-link w-full block font-medium text-xs leading-tight uppercase border-x-0 border-t-0 border-b-2 border-transparent px-6 py-3 my-2 hover:border-transparent hover:bg-gray-100 focus:border-transparent'
+        id='tabs-top-50'
+        data-bs-toggle='pill'
+        data-bs-target='#tabs-top50'
+        role='tab'
+        aria-controls='tabs-top50'
+        aria-selected='false'
+      >Top 50</a>
+    </li>
+  </ul>
+  <div class='tab-content' id='tabs-tabContent'>
+    <div
+      class='tab-pane fade show active'
+      id='tabs-trending'
+      role='tabpanel'
+      aria-labelledby='tabs-trending-book'
+    >
+      <section class='flex flex-col justify-center gap-2'>
+        <h1 class="text-2xl text-yellow-500 font-bold border-b-2 border-black">Trending Books</h1>
+        {{#each books.Books}}
+          <a href='/{{id}}' class='flex flex-col justify-center bg-gray-50 p-2 rounded-md w-full hover:opacity-70'>
+            <h2>
+              {{title}}
+            </h2>
+            <p>by {{author}}</p>
+          </a>
+        {{/each}}
+      </section>
+    </div>
+    <div
+      class='tab-pane fade'
+      id='tabs-recnadd'
+      role='tabpanel'
+      aria-labelledby='tabs-recentlyadded-tab'
+    >
+      Recently added
+    </div>
+    <div
+      class='tab-pane fade'
+      id='tabs-mstpopular'
+      role='tabpanel'
+      aria-labelledby='tabs-mst-popular'
+    >
+      most Popular
+    </div>
+    <div
+      class='tab-pane fade'
+      id='tabs-bs'
+      role='tabpanel'
+      aria-labelledby='tabs-best-seller'
+    >
+      B S
+    </div>
+    <div
+      class='tab-pane fade'
+      id='tabs-top50'
+      role='tabpanel'
+      aria-labelledby='tabs-top-50'
+    >
+      TOP 50
+    </div>
+  </div>
+</section>

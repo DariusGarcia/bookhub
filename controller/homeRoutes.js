@@ -1,6 +1,6 @@
 const homeRouter = require('express').Router()
 const isAuthenticated = require('../utils/auth')
-const { Book } = require('../models/')
+const { Book, Tag, BookTag } = require('../models/')
 
 // display home page that displays all books
 homeRouter.get('/', async (req, res) => {
@@ -98,6 +98,53 @@ homeRouter.get('/edit/:id', isAuthenticated, async (req, res) => {
     if (singleBook) {
       const book = singleBook.get({ plain: true })
       res.render('updateBook', { layout: 'main', book })
+    }
+  } catch (err) {
+    res.status(500).json(err)
+  }
+})
+// display books based on tag
+homeRouter.get('/books/:tag', async (req, res) => {
+  const tagSlug = req.params.tag
+  let tagName = ''
+  let templateView = ''
+  switch (tagSlug) {
+    case 'trending':
+      tagName = 1
+      templateView = 'trendingTag'
+      break
+    case 'recent':
+      tagName = 2
+      templateView = 'recentlyAddedTag'
+      break
+    case 'popular':
+      tagName = 3
+      break
+    case 'best-seller':
+      tagName = 4
+      break
+    case 'top-50':
+      tagName = 5
+      break
+    default:
+      res.redirect('/books')
+      break
+  }
+  try {
+    const trendingBooksArray = await Tag.findOne({
+      where: {
+        id: tagName,
+      },
+      include: [
+        {
+          model: Book,
+          through: BookTag,
+        },
+      ],
+    })
+    if (trendingBooksArray) {
+      const books = trendingBooksArray.get({ plain: true })
+      res.render(templateView, { layout: 'bookDisplay', books })
     }
   } catch (err) {
     res.status(500).json(err)
