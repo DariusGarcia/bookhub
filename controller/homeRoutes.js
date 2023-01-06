@@ -40,7 +40,8 @@ homeRouter.get('/books', async (req, res) => {
       order: [[['title', 'DESC']]],
     })
     const books = bookData.map((book) => book.get({ plain: true }))
-    res.render('displayAllBooks', { layout: 'main', books })
+    const authStatus = req.session.loggedIn
+    res.render('displayAllBooks', { layout: 'main', books, authStatus })
   } catch (err) {
     res.status(500).json(err)
   }
