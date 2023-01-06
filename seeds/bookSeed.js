@@ -247,6 +247,78 @@ const bookData = [
     description:
       "A semi-autobiographical novel about a young woman's descent into mental illness",
   },
+  {
+    title: 'The Brothers Karamazov',
+    author: 'Fyodor Dostoevsky',
+    genre: 'Philosophical Fiction',
+    publishingDate: '1880',
+    description:
+      'A novel about the relationships between four brothers and their troubled relationship with their father',
+  },
+  {
+    title: 'Wuthering Heights',
+    author: 'Emily Brontë',
+    genre: 'Romance',
+    publishingDate: '1847',
+    description:
+      'A novel about the tumultuous relationships between the members of the Earnshaw and Linton families',
+  },
+  {
+    title: 'The Lord of the Rings',
+    author: 'J.R.R. Tolkien',
+    genre: 'Fantasy',
+    publishingDate: '1954',
+    description:
+      'A trilogy about the quest of a hobbit named Frodo Baggins to destroy a powerful and evil ring',
+  },
+  {
+    title: 'The Invisible Man',
+    author: 'H.G. Wells',
+    genre: 'Science Fiction',
+    publishingDate: '1897',
+    description:
+      'A novel about a scientist who discovers a way to become invisible and the consequences of his discovery',
+  },
+  {
+    title: 'The Color Purple',
+    author: 'Alice Walker',
+    genre: 'Epistolary Novel',
+    publishingDate: '1982',
+    description:
+      'A novel told in letters about the struggles and triumphs of a young African-American woman named Celie',
+  },
+  {
+    title: 'The Red and the Black',
+    author: 'Stendhal',
+    genre: 'Historical Fiction',
+    publishingDate: '1830',
+    description:
+      'A novel about the social and political climb of a young man named Julien Sorel in 19th century France',
+  },
+  {
+    title: 'Heart of Darkness',
+    author: 'Joseph Conrad',
+    genre: 'Adventure',
+    publishingDate: '1899',
+    description:
+      'A novella about a sailor named Marlow and his journey up the Congo River to find the enigmatic European trader Kurtz',
+  },
+  {
+    title: 'The Time Machine',
+    author: 'H.G. Wells',
+    genre: 'Science Fiction',
+    publishingDate: '1895',
+    description:
+      'A novel about a scientist who builds a time machine and travels to the future',
+  },
+  {
+    title: 'Dracula',
+    author: 'Bram Stoker',
+    genre: 'Gothic',
+    publishingDate: '1897',
+    description:
+      'A novel about a Transylvanian vampire and the efforts of a group of people to stop him from spreading his undead curse',
+  },
 ]
 
 const createBookTable = () => Book.bulkCreate(bookData)
