@@ -1,0 +1,54 @@
+<input type="text" id='auth-status' hidden value={{authStatus}} />
+<ul
+  class="dropdown-menu min-w-max absolute hidden bg-white text-base z-50 float-left py-2 list-none text-left rounded-lg shadow-lg mt-1 hidden m-0 bg-clip-padding border-none bg-gray-800"
+  aria-labelledby="dropdownMenuButton2">
+  <li>
+    <a class="dropdown-item text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-300 hover:bg-gray-700 hover:text-white focus:text-white focus:bg-gray-700 active:bg-blue-600"
+      href="/books">
+      Home
+    </a>
+  </li>
+  <li>
+    <a class="dropdown-item text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-300 hover:bg-gray-700 hover:text-white focus:text-white focus:bg-gray-700"
+      href="/dashboard">
+      Dashboard
+    </a>
+  </li>
+  <li>
+    <a class="dropdown-item text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-300 hover:bg-gray-700 hover:text-white focus:text-white focus:bg-gray-700"
+      href="#">
+      Profile
+    </a>
+  </li>
+    {{#if authStatus }}
+  <li class="sign-in">
+    <a id="login-link"
+      class="dropdown-item text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-300 hover:bg-gray-700 hover:text-white focus:text-white focus:bg-gray-700"
+      href="/login">
+      Sign In
+    </a>
+  </li>
+  {{/if}}
+  
+  <li>
+    <a class="dropdown-item text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-300 hover:bg-gray-700 hover:text-white focus:text-white focus:bg-gray-700"
+      href="/signup">
+      Sign up
+    </a>
+  </li>
+  <li>
+    <hr class="h-0 my-2 border border-solid border-t-0 border-gray-300 opacity-25" />
+  </li>
+
+  <li class="sign-out">
+    <a id="logout-link"
+      class="dropdown-item text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-300 hover:bg-gray-700 hover:text-white focus:text-white focus:bg-gray-700"
+      href="/logout">
+      Logout
+    </a>
+  </li>
+</ul>
+<script src="/js/login.js"></script>
+
+ 
+

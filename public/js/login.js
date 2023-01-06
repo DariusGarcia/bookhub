@@ -45,3 +45,8 @@ function handleAuthDisplay() {
 }
 
 handleAuthDisplay()
+
+
+const authStatus = document.getElementById('auth-status').value
+
+console.log(authStatus)

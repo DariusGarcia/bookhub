@@ -18,7 +18,7 @@ homeRouter.get('/dashboard', isAuthenticated, async (req, res) => {
   try {
     const bookData = await Book.findAll({})
     const books = bookData.map((book) => book.get({ plain: true }))
-    res.render('dashboard', { layout: 'main', books })
+    res.render('dashboard', { layout: 'main', books, authStatus })
   } catch (err) {
     res.status(500).json(err)
   }
@@ -28,7 +28,7 @@ homeRouter.get('/dashboard', isAuthenticated, async (req, res) => {
   try {
     const bookData = await Book.findAll({})
     const books = bookData.map((book) => book.get({ plain: true }))
-    res.render('dashboard', { layout: 'main', books })
+    res.render('dashboard', { layout: 'main', books, authStatus })
   } catch (err) {
     res.status(500).json(err)
   }
@@ -40,7 +40,7 @@ homeRouter.get('/books', async (req, res) => {
       order: [[['title', 'DESC']]],
     })
     const books = bookData.map((book) => book.get({ plain: true }))
-    res.render('displayAllBooks', { layout: 'main', books })
+    res.render('displayAllBooks', { layout: 'main', books, authStatus })
   } catch (err) {
     res.status(500).json(err)
   }
@@ -50,7 +50,7 @@ homeRouter.get('/books/add', isAuthenticated, async (req, res) => {
   try {
     const bookData = await Book.findAll({})
     const books = bookData.map((book) => book.get({ plain: true }))
-    res.render('addNewBook', { layout: 'main', books })
+    res.render('addNewBook', { layout: 'main', books, authStatus })
   } catch (err) {
     res.status(500).json(err)
   }
@@ -84,7 +84,7 @@ homeRouter.get('/:id', isAuthenticated, async (req, res) => {
     const singleBook = await Book.findByPk(bookId)
     if (singleBook) {
       const book = singleBook.get({ plain: true })
-      res.render('displaySingleBook', { layout: 'main', book })
+      res.render('displaySingleBook', { layout: 'main', book, authStatus })
     }
   } catch (err) {
     res.status(500).json(err)
@@ -97,7 +97,7 @@ homeRouter.get('/edit/:id', isAuthenticated, async (req, res) => {
     const singleBook = await Book.findByPk(bookId)
     if (singleBook) {
       const book = singleBook.get({ plain: true })
-      res.render('updateBook', { layout: 'main', book })
+      res.render('updateBook', { layout: 'main', book, authStatus })
     }
   } catch (err) {
     res.status(500).json(err)
@@ -144,7 +144,7 @@ homeRouter.get('/books/:tag', async (req, res) => {
     })
     if (trendingBooksArray) {
       const books = trendingBooksArray.get({ plain: true })
-      res.render(templateView, { layout: 'bookDisplay', books })
+      res.render(templateView, { layout: 'bookDisplay', books, authStatus })
     }
   } catch (err) {
     res.status(500).json(err)
