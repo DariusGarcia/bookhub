@@ -81,17 +81,35 @@
     </nav>
     
     <section>
-      <ul class=" nav nav-tabs flex flex-col md:flex-row flex-wrap list-none border-b-0 pl-0 mb-4" id="tabs-tab3"
+      <ul class=" nav nav-tabs flex flex-col md:flex-row flex-wrap list-none border-b-0 pl-0 mb-4" id="tabs-tab"
         role="tablist">
         <li class="nav-item" role="presentation">
-          <a href="#tabs-trending" class="
+          <a href="#tabs-allbooks" class="
             nav-link w-full block font-medium text-xs leading-tight uppercase border-x-0 border-t-0 border-b-2 border-transparent
             px-6 py-3 my-2
             hover:border-transparent hover:bg-gray-100
             focus:border-transparent active"
-            id="tabs-trending-book" data-bs-toggle="pill" data-bs-target="#tabs-trending" role="tab" aria-controls="tabs-trending" aria-selected="true">
-            Trending Books
+            id="tabs-all-book" data-bs-toggle="pill" data-bs-target="#tabs-allbooks" role="tab" aria-controls="tabs-allbooks" aria-selected="true">
+            All Books
           </a>
+        </li>
+        <li class="nav-item" role="presentation">
+          <a href="#tabs-trending" class="
+            nav-link
+            w-full
+            block
+            font-medium
+            text-xs
+            leading-tight
+            uppercase
+            border-x-0 border-t-0 border-b-2 border-transparent
+            px-6
+            py-3
+            my-2
+            hover:border-transparent hover:bg-gray-100
+            focus:border-transparent
+          " id="tabs-trending-book" data-bs-toggle="pill" data-bs-target="#tabs-trending" role="tab"
+            aria-controls="tabs-trending" aria-selected="false">Trending Books</a>
         </li>
         <li class="nav-item" role="presentation">
           <a href="#tabs-recnadd" class="
@@ -167,10 +185,10 @@
         </li>
       </ul>
       <div class="tab-content" id="tabs-tabContent">
-        <div class="tab-pane fade show active" id="tabs-trending" role="tabpanel" aria-labelledby="tabs-trending-book">
+        <div class="tab-pane fade show active" id="tabs-allbooks" role="tabpanel" aria-labelledby="tabs-all-book">
           {{!-- TRENDING BOOKS --}}
           <section class="flex flex-col">
-            <h2 class="text-xl font-semibold text-yellow-500">Trending books</h2>
+            <h2 class="text-xl font-semibold text-yellow-500">All books</h2>
             <div class="flex flex-col md:grid md:grid-cols-5 md:gap-4">
             {{#each books}}
               <div class='flex flex-col items-center rounded-sm'>
@@ -202,6 +220,9 @@
               </div>
             {{/each}}</div>
           </section>
+        </div>
+        <div class="tab-pane fade" id="tabs-trending" role="tabpanel" aria-labelledby="tabs-trending-book" >
+          Trending
         </div>
         <div class="tab-pane fade" id="tabs-recnadd" role="tabpanel" aria-labelledby="tabs-recentlyadded-tab" >
           Recently added
