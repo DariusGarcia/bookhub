@@ -24,11 +24,11 @@ homeRouter.get('/dashboard', isAuthenticated, async (req, res) => {
   }
 })
 // display search books page
-homeRouter.get('/dashboard', isAuthenticated, async (req, res) => {
+homeRouter.get('/books/search', async (req, res) => {
   try {
     const bookData = await Book.findAll({})
     const books = bookData.map((book) => book.get({ plain: true }))
-    res.render('dashboard', { layout: 'main', books })
+    res.render('search', { layout: 'bookDisplay', books })
   } catch (err) {
     res.status(500).json(err)
   }
@@ -79,7 +79,7 @@ homeRouter.get('/signup', async (req, res) => {
   }
 })
 // display single book page
-homeRouter.get('/:id', isAuthenticated, async (req, res) => {
+homeRouter.get('/:id', async (req, res) => {
   const bookId = req.params.id
   try {
     const singleBook = await Book.findByPk(bookId)
@@ -120,12 +120,15 @@ homeRouter.get('/books/:tag', async (req, res) => {
       break
     case 'popular':
       tagName = 3
+      templateView = 'popularTag'
       break
     case 'best-seller':
       tagName = 4
+      templateView = 'bestSellerTag'
       break
-    case 'top-50':
+    case 'top50':
       tagName = 5
+      templateView = 'top50Tag'
       break
     default:
       res.redirect('/books')

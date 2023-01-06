@@ -61,19 +61,19 @@
       >All Books</a>
        <a
         href='/books/trending'
-        class=' w-full block font-medium text-center text-xs leading-tight uppercase border-x-0 border-t-0 border-b-2  px-6 py-3 my-2 text-blue-600 hover:border-b-blue-600 hover:bg-gray-100 focus:border-transparent  active'
+        class=' w-full block font-medium text-center text-xs leading-tight uppercase border-x-0 border-t-0 border-b-2 border-transparent px-6 py-3 my-2 hover:border-transparent hover:bg-gray-100 focus:border-transparent'
       >Trending</a>
       <a
         href='/books/recent'
         class=' w-full block font-medium text-center text-xs leading-tight uppercase border-x-0 border-t-0 border-b-2 border-transparent px-6 py-3 my-2 hover:border-transparent hover:bg-gray-100 focus:border-transparent'
       >Recently Added</a>
       <a
-        href='#tabs-mstpopular'
-        class='nav-link w-full block font-medium text-center text-xs leading-tight uppercase border-x-0 border-t-0 border-b-2 border-transparent px-6 py-3 my-2 hover:border-transparent hover:bg-gray-100 focus:border-transparent'
+        href='/books/popular'
+        class=' w-full block font-medium text-center text-xs leading-tight uppercase border-x-0 border-t-0 border-b-2  px-6 py-3 my-2 text-blue-600 hover:border-b-blue-600 hover:bg-gray-100 focus:border-transparent  active'
         id='tabs-mst-popular'
       >Most Popular</a>
       <a
-        href='#tabs-bs'
+        href='/books/best-seller'
         class='nav-link w-full block font-medium text-center text-xs leading-tight uppercase border-x-0 border-t-0 border-b-2 border-transparent px-6 py-3 my-2 hover:border-transparent hover:bg-gray-100 focus:border-transparent'
         id='tabs-best-seller'
       >Best Seller</a>
@@ -93,7 +93,7 @@
         <div class="tab-pane fade show active" id="tabs-trending">
           {{!-- TRENDING BOOKS --}}
           <section class="flex flex-col">
-            <h2 class="text-xl font-semibold text-yellow-500">Trending Books</h2>
+            <h2 class="text-xl font-semibold text-yellow-500">Most popular</h2>
 
             <div class="flex flex-col md:grid md:grid-cols-5 md:gap-4">
             {{#each books.Books}}
@@ -142,7 +142,5 @@
         <div class="tab-pane fade">
           TOP 50
         </div>
-
           </div>
     </section>
-
