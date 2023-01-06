@@ -41,7 +41,7 @@ homeRouter.get('/books', async (req, res) => {
     })
     const books = bookData.map((book) => book.get({ plain: true }))
     const authStatus = req.session.loggedIn
-    res.render('displayAllBooks', { layout: 'main', books, authStatus })
+    res.render('displayAllBooks', { layout: 'main', books })
   } catch (err) {
     res.status(500).json(err)
   }
@@ -126,7 +126,7 @@ homeRouter.get('/books/:tag', async (req, res) => {
       tagName = 4
       templateView = 'bestSellerTag'
       break
-    case 'top50':
+    case 'top-50':
       tagName = 5
       templateView = 'top50Tag'
       break
