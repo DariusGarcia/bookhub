@@ -44,7 +44,6 @@ homeRouter.get('/books/add', isAuthenticated, async (req, res) => {
     res.status(500).json(err)
   }
 })
-
 // display login page
 homeRouter.get('/login', async (req, res) => {
   try {
@@ -53,7 +52,6 @@ homeRouter.get('/login', async (req, res) => {
     res.status(500).json(err)
   }
 })
-
 // display sign-up page
 homeRouter.get('/signup', async (req, res) => {
   try {
@@ -62,7 +60,6 @@ homeRouter.get('/signup', async (req, res) => {
     res.status(500).json(err)
   }
 })
-
 // display single book page
 homeRouter.get('/:id', isAuthenticated, async (req, res) => {
   const bookId = req.params.id
@@ -76,7 +73,6 @@ homeRouter.get('/:id', isAuthenticated, async (req, res) => {
     res.status(500).json(err)
   }
 })
-
 // display update book page
 homeRouter.get('/edit/:id', isAuthenticated, async (req, res) => {
   const bookId = req.params.id

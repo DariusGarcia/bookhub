@@ -1,11 +1,17 @@
 const bookRouter = require('express').Router()
-const { urlencoded } = require('express')
-const { Book } = require('../../models')
+const { Book, Tag, BookTag } = require('../../models')
 
 // find ALL books
 bookRouter.get('/', async (req, res) => {
   try {
-    const allBooks = await Book.findAll({})
+    const allBooks = await Book.findAll({
+      include: [
+        {
+          model: Tag,
+          through: BookTag,
+        },
+      ],
+    })
     res.json(allBooks)
   } catch (err) {
     res.status(400).json(err)
@@ -77,29 +83,14 @@ bookRouter.delete('/:id', async (req, res) => {
   }
 })
 
-// find ALL books by genre
-bookRouter.get('/genre/:genre', async (req, res) => {
-  const genreId = req.params.genre
-  try {
-    const allBooksByGenre = await Book.findAll({
-      where: {
-        genre: genreId,
-      },
-    })
-    res.json(allBooksByGenre)
-  } catch (err) {
-    res.status(400).json(err)
-  }
-})
-
 // find ALL books by title
 bookRouter.get('/title/:title', async (req, res) => {
-  const titleId = req.params.title
-  titleId.toString()
+  const bookTitle = req.params.title
+  bookTitle.toString()
   try {
     const allBooksByTitle = await Book.findAll({
       where: {
-        title: titleId,
+        title: bookTitle,
       },
     })
     res.json(allBooksByTitle)
@@ -123,4 +114,18 @@ bookRouter.get('/author/:author', async (req, res) => {
   }
 })
 
+// find ALL books by genre
+bookRouter.get('/genre/:genre', async (req, res) => {
+  const genre = req.params.genre
+  try {
+    const allBooksByGenre = await Book.findAll({
+      where: {
+        genre: genre,
+      },
+    })
+    res.json(allBooksByGenre)
+  } catch (err) {
+    res.status(400).json(err)
+  }
+})
 module.exports = bookRouter
