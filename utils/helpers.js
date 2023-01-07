@@ -1,8 +1,8 @@
 module.exports = {
   format_title: (str) => {
-    return str.substring(0, 20)
+    return str.substring(0, 30)
   },
   format_body: (str) => {
-    return str.substring(0, 45)
+    return str.substring(0, 90)
   },
 }

@@ -28,11 +28,15 @@ const filterHandler = async function (e) {
       searchFilter = 'title'
   }
 
-  await fetch(`/api/books/${searchFilter}/${searchQueryValue}`)
+  const searchData = await fetch(
+    `/api/books/${searchFilter}/${searchQueryValue}`
+  )
     .then((data) => data.json())
     .then((res) => console.log(res))
     .catch((err) => console.log(err))
   //   document.location.replace('/')
+  searchData()
 }
+console.log(searchData)
 
 searchBtn.addEventListener('click', filterHandler)
