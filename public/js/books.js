@@ -22,7 +22,7 @@ const newBookFormHandler = async function (e) {
     }),
     headers: { 'Content-Type': 'application/json' },
   })
-  document.location.replace('/')
+  document.location.replace('/books')
 }
 // add new book handler function to book form event listener
 const newBookForm = document.querySelector('#book-form')
