@@ -6,7 +6,7 @@
           Best Sellers
         </a>
         <div class='flex items-center' id='store-nav-content'> 
-          <a href="/books/search" class="inline-block px-6 py-2.5 bg-white text-black font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-gray-500 hover:shadow-lg focus:bg-gray-300 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-300 active:shadow-lg transition duration-150 ease-in-out" type="button" >
+          <a href="/books/search" class="inline-block px-6 py-2.5 bg-white text-black font-medium text-xs leading-tight uppercase rounded shadow-md hover:scale-150 hover:shadow-lg focus:bg-gray-300 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-300 active:shadow-lg transition duration-150 ease-in-out" type="button" >
               <svg class='fill-current hover:text-black' xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'>
               <path d='M10,18c1.846,0,3.543-0.635,4.897-1.688l4.396,4.396l1.414-1.414l-4.396-4.396C17.365,13.543,18,11.846,18,10 c0-4.411-3.589-8-8-8s-8,3.589-8,8S5.589,18,10,18z M10,4c3.309,0,6,2.691,6,6s-2.691,6-6,6s-6-2.691-6-6S6.691,4,10,4z'></path>
               </svg>
@@ -28,7 +28,7 @@
           class='nav-link w-full block font-medium text-center text-xs leading-tight uppercase border-x-0 border-t-0 border-b-2 border-transparent px-6 py-3 my-2 hover:border-transparent hover:bg-gray-100 focus:border-transparent'
           id='tabs-mst-popular'>Most Popular</a>
         <a href='/books/best-seller'
-          class=' w-full block font-medium text-center text-xs leading-tight uppercase border-x-0 border-t-0 border-b-2  px-6 py-3 my-2 text-blue-600 hover:border-b-blue-600 hover:bg-gray-100 focus:border-transparent  active'
+          class=' w-full block font-bold text-center text-xs leading-tight uppercase border-x-0 border-t-0 border-b-2  px-6 py-3 my-2 text-green-800  hover:border-b-green-600 hover:bg-gray-100 focus:border-transparent active'
           id='tabs-best-seller'>Best Sellers</a>
         <a href='/books/top-50'
           class='nav-link w-full block font-medium text-center text-xs leading-tight uppercase border-x-0 border-t-0 border-b-2 border-transparent px-6 py-3 my-2 hover:border-transparent hover:bg-gray-100 focus:border-transparent'
@@ -43,21 +43,23 @@
               <section class="flex flex-col">
                 {{!-- <h2 class="text-xl font-semibold text-yellow-500">Best Sellers</h2> --}}
 
-                <div class="flex flex-col md:grid md:grid-cols-5 md:gap-4">
+                <div class="flex flex-col md:grid md:grid-cols-4 md:gap-4">
                   {{#each books.Books}}
                   <div class='flex flex-col items-center rounded-lg'>
-                    <a class='p-4 hover:bg-gray-50 rounded-md' href={{id}}>
-                      <img class='w-36' src='/images/book.png' />
+                    <a class='p-4 hover:bg-gray-50 hover:scale-110 rounded-md' href={{id}}>
+                      <div class="mx-auto place-content-center items-center flex justify-center">
+                        <img class='w-36 h-36' src='https://i.pinimg.com/564x/db/5b/85/db5b853d663d5243fb55efe7900127f5.jpg' />
+                      </div>
                       <div class=' flex items-center justify-between'>
-                        <p class='mt-1 font-semibold'>{{format_title title}}</p>
+                        <p class='mt-1 rounded-sm text-gray-900 font-bold'>{{format_title title}}</p>
 
                       </div>
                       <span class="flex flex-col gap-2">
-                        <p class='mt-1 rounded-sm text-gray-900'>by {{author}}</p>
-                        <p class=' rounded-sm text-gray-900 text-sm'>Published in {{publishingDate}}</p>
-                        <p class=' rounded-sm text-gray-900 text-sm'> {{format_body description}}...</p>
+                        <p class='mt-1 rounded-sm text-gray-700'>by {{author}}</p>
+                        <p class=' rounded-sm text-gray-600 text-sm'>Published in {{publishingDate}}</p>
+                        <p class=' rounded-sm text-gray-500 text-sm line-clamp'> {{format_body description}}...</p>
                         <div class="flex flex-row justify-between">
-                          <p class='px-2 rounded-md text-gray-500 border-2 border-gray-500 w-min'>{{genre}}</p>
+                          <p class='px-2 rounded-md text-gray-500 border-2 border-gray-500 w-fit'>{{genre}}</p>
                       </span>
                       <svg class='h-6 w-6 fill-current text-gray-500 hover:text-black'
                         xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'>
