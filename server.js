@@ -39,7 +39,7 @@ app.use(express.static(path.join(__dirname, 'public')))
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () =>
     console.log(
-      `\n------------------------\nSuccessfully connected to SQL database \nNow listening on port: ${PORT}!\n------------------------`
+      `\n------------------------------------------------\nSuccessfully connected to SQL database \nNow listening on port: ${PORT}\n\nhttp://localhost:3001/\n------------------------------------------------`
     )
   )
 })
