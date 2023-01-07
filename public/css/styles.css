@@ -58,6 +58,13 @@ body {
     transition: max-height .5s ease-out;
 }
 
+.line-clamp {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;  
+    overflow: hidden;
+  }
+
 .menu {
     list-style: none;
     padding: 0;
