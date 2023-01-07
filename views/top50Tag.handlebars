@@ -2,9 +2,8 @@
   <div class='container mx-auto flex items-center flex-wrap pt-4 pb-12'>
     <nav id='store' class='w-full'>
       <div class='w-full container mx-auto flex flex-wrap items-center justify-between mt-0  py-3'>
-        <a class='uppercase tracking-wide no-underline hover:no-underline font-bold text-gray-800 text-2xl'
-          href='/books'>
-          Books
+        <a class='uppercase tracking-wide no-underline hover:no-underline font-bold text-gray-800 text-2xl'>
+          Top 50
         </a>
         <div class='flex items-center' id='store-nav-content'> 
           <a href="/books/search" class="inline-block px-6 py-2.5 bg-white text-black font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-gray-500 hover:shadow-lg focus:bg-gray-300 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-300 active:shadow-lg transition duration-150 ease-in-out" type="button" >
@@ -42,7 +41,7 @@
             <div class="tab-pane fade show active" id="tabs-trending">
               {{!-- TRENDING BOOKS --}}
               <section class="flex flex-col">
-                <h2 class="text-xl font-semibold text-yellow-500">Top 50</h2>
+                {{!-- <h2 class="text-xl font-semibold text-yellow-500">Top 50</h2> --}}
 
                 <div class="flex flex-col md:grid md:grid-cols-5 md:gap-4">
                   {{#each books.Books}}
@@ -58,7 +57,7 @@
                         <p class=' rounded-sm text-gray-900 text-sm'>Published in {{publishingDate}}</p>
                         <p class=' rounded-sm text-gray-900 text-sm'> {{format_body description}}...</p>
                         <div class="flex flex-row justify-between">
-                          <p class='px-2 rounded-md text-blue-500 border-2 border-blue-500 w-min'>{{genre}}</p>
+                          <p class='px-2 rounded-md text-gray-500 border-2 border-gray-500 w-min'>{{genre}}</p>
                       </span>
                       <svg class='h-6 w-6 fill-current text-gray-500 hover:text-black'
                         xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'>
