@@ -2,52 +2,15 @@
   <div class='container mx-auto flex items-center flex-wrap pt-4 pb-12'>
  <nav id='store' class='w-full'>
       <div class='w-full container mx-auto flex flex-wrap items-center justify-between mt-0  py-3'>
-        <a class='uppercase tracking-wide no-underline hover:no-underline font-bold text-gray-800 text-2xl'
-          href='/books'>
-          Books
+        <a class='uppercase tracking-wide no-underline hover:no-underline font-bold text-gray-800 text-2xl'>
+          Recently Added
         </a>
-        <div class='flex items-center' id='store-nav-content'>          
-          <p class="md:space-x-1 space-y-1 md:space-y-0 mb-4">
-            <button class="invisible inline-block px-6 py-2.5 bg-white text-black font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-gray-500 hover:shadow-lg focus:bg-gray-300 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-300 active:shadow-lg transition duration-150 ease-in-out" type="button" data-bs-toggle="collapse" data-bs-target="#genre" aria-expanded="false" aria-controls="collapseExample">
-              <svg class='fill-current hover:text-black' xmlns='http://www.w3.org/2000/svg' width='24'height='24' viewBox='0 0 24 24'>                <path d='M7 11H17V13H7zM4 7H20V9H4zM10 15H14V17H10z'></path>
-              </svg>
-            </button>
-            <button class="inline-block px-6 py-2.5 bg-white text-black font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-gray-500 hover:shadow-lg focus:bg-gray-300 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-300 active:shadow-lg transition duration-150 ease-in-out" type="button" data-bs-toggle="collapse" data-bs-target="#searchbar" aria-expanded="false" aria-controls="collapseExample">
+        <div class='flex items-center' id='store-nav-content'> 
+          <a href="/books/search" class="inline-block px-6 py-2.5 bg-white text-black font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-gray-500 hover:shadow-lg focus:bg-gray-300 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-300 active:shadow-lg transition duration-150 ease-in-out" type="button" >
               <svg class='fill-current hover:text-black' xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'>
               <path d='M10,18c1.846,0,3.543-0.635,4.897-1.688l4.396,4.396l1.414-1.414l-4.396-4.396C17.365,13.543,18,11.846,18,10 c0-4.411-3.589-8-8-8s-8,3.589-8,8S5.589,18,10,18z M10,4c3.309,0,6,2.691,6,6s-2.691,6-6,6s-6-2.691-6-6S6.691,4,10,4z'></path>
               </svg>
-            </button>
-          </p>
-          <div class="collapse" id="searchbar">
-            <div class="w-96 block p-6 rounded-lg shadow-lg bg-white">
-              {{!-- search form --}}
-              <div class="container mx-auto w-full px-4 ">
-                <form id="search-form" class="relative mt-3 rounded-md shadow-sm">
-                  <label for="" class="mb-3 block text-base font-medium text-black">
-                    Searched by
-                  </label>
-                  <input type="text" name="value" id="search-input" class="text-body-color border-[f0f0f0] focus:border-primary w-full rounded-md border-gray-300 py-3 px-[14px] text-base outline-none focus-visible:shadow-none" placeholder="Please Enter">
-                  <div class="absolute inset-y-0 right-0 flex items-center">
-                      <label for="searchBar" class="sr-only">searchbar</label>
-                        <select id="searchOptions" name="options" class="h-full rounded-md border-transparent bg-transparent py-0 pl-2 pr-7 text-gray-500 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm xl:text-md">
-                          <option value="title">Book Title</option>
-                          <option value="author">Author Name</option>
-                          <option value="genre">Genre</option>
-                        </select>
-                  </div>  
-                  <button id='search-btn' type="submit" class="group relative flex w-full justify-center rounded-md border border-transparent bg-gray-300 py-2 px-4 text-sm font-medium text-black hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2">
-                    <span class="absolute inset-y-0 left-0 flex items-center pl-3">
-                      <svg class="fill-current hover:text-black-400" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                        <path d="M10,18c1.846,0,3.543-0.635,4.897-1.688l4.396,4.396l1.414-1.414l-4.396-4.396C17.365,13.543,18,11.846,18,10 c0-4.411-3.589-8-8-8s-8,3.589-8,8S5.589,18,10,18z M10,4c3.309,0,6,2.691,6,6s-2.691,6-6,6s-6-2.691-6-6S6.691,4,10,4z" />
-                      </svg>                  
-                    </span>
-                    Search
-                  </button>
-                </form>
-              </div>
-            </div>
-          </div>
-         
+          </a>         
         </div>
       </div>
     </nav>
@@ -61,12 +24,11 @@
       >All Books</a>
        <a
         href='/books/trending'
-        class=' w-full block font-medium text-center text-xs leading-tight uppercase border-x-0 border-t-0 border-b-2 border-transparent px-6 py-3 my-2 hover:border-transparent hover:bg-gray-100 focus:border-transparent'
+        class='nav-link w-full block font-medium text-center text-xs leading-tight uppercase border-x-0 border-t-0 border-b-2 border-transparent px-6 py-3 my-2 hover:border-transparent hover:bg-gray-100 focus:border-transparent'
       >Trending</a>
       <a
         href='/books/recent'
         class=' w-full block font-medium text-center text-xs leading-tight uppercase border-x-0 border-t-0 border-b-2  px-6 py-3 my-2 text-blue-600 hover:border-b-blue-600 hover:bg-gray-100 focus:border-transparent  active'
-        
       >Recently Added</a>
       <a
         href='/books/popular'
@@ -84,40 +46,7 @@
         id='tabs-top-50'
       >Top 50</a>
   </ul>
-  <div class='tab-content' id='tabs-tabContent'>
-    <div class='tab-pane fade show active' id='tabs-trending'>
-      <section class='flex flex-col justify-center gap-2'>
-        <h1
-          class='text-2xl text-yellow-500 font-bold border-b-2 border-black'
-        >Recently Added Books</h1>
-        {{#each books.Books}}
-          <a
-            href='/{{id}}'
-            class='flex flex-col justify-center bg-gray-50 p-2 rounded-md w-full hover:opacity-70'
-          >
-            <h2 class=''>
-              {{format_title title}}
-            </h2>
-            <p>by {{author}}</p>
-          </a>
-        {{/each}}
-      </section>
-    </div>
-    <div class='tab-pane fade' id='tabs-recnadd'>
-      Recently added
-    </div>
-    <div class='tab-pane fade' id='tabs-mstpopular'>
-      most Popular
-    </div>
-    <div class='tab-pane fade' id='tabs-bs'>
-      B S
-    </div>
-    <div class='tab-pane fade' id='tabs-top50'>
-      TOP 50
-    </div>
-  </div>
-  {{> footer}}
-</section>  
+  
   <div class='' id='tabs-tabContent px-24'>
     <div
       class='tab-pane fade show active'
@@ -127,7 +56,7 @@
         <div class="tab-pane fade show active" id="tabs-trending">
           {{!-- TRENDING BOOKS --}}
           <section class="flex flex-col">
-            <h2 class="text-xl font-semibold text-yellow-500">Recently Added Books</h2>
+            {{!-- <h2 class="text-xl font-semibold text-yellow-500">Recently Added</h2> --}}
 
             <div class="flex flex-col md:grid md:grid-cols-5 md:gap-4">
             {{#each books.Books}}
@@ -145,7 +74,7 @@
                   <p class='mt-1 rounded-sm text-gray-900'>by {{author}}</p>
                   <p class=' rounded-sm text-gray-900 text-sm'>Published in {{publishingDate}}</p>
                   <p class=' rounded-sm text-gray-900 text-sm'> {{format_body description}}...</p>
-                  <div class="flex flex-row justify-between"><p class='px-2 rounded-md text-blue-500 border-2 border-blue-500 w-min'>{{genre}}</p></span>
+                  <div class="flex flex-row justify-between"><p class='px-2 rounded-md text-gray-500 border-2 border-gray-500 w-min'>{{genre}}</p></span>
                     <svg
                         class='h-6 w-6 fill-current text-gray-500 hover:text-black'
                         xmlns='http://www.w3.org/2000/svg'
@@ -176,5 +105,7 @@
         <div class="tab-pane fade">
           TOP 50
         </div>
+
           </div>
     </section>
+{{> footer}}

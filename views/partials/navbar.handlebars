@@ -1,22 +1,20 @@
- <nav id="header" class="w-full z-30 top-0 py-1">
-        <div class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 px-6 py-3">
+ <nav id="header" class="w-full z-30 top-0">
+        <div class="w-full container mx-auto flex flex-wrap items-center justify-between py-3">
             <div class="hidden md:flex md:items-center md:w-auto w-full order-3 md:order-1" id="menu">
                 <nav>
                     <ul class="md:flex items-center justify-between text-base text-gray-700 pt-4 md:pt-0">
-                        <li><a class="inline-block no-underline hover:text-black hover:underline py-2 px-4" href="/">Home</a></li>
-                        <li><a class="inline-block no-underline hover:text-black hover:underline py-2 px-4" href="/books">Books</a></li>
-                      
+                        <li><a class="inline-block no-underline hover:text-black hover:underline py-2 px-4 hover:opacity-70" href="/books">Books</a></li>
+                        <li><a class="inline-block no-underline hover:text-black hover:underline py-2 px-4 hover:opacity-70" href="/dashboard">Dashboard</a></li>
                     </ul>
                 </nav>
             </div>
-            
-            <div class="order-1 md:order-2">
-                <i class='fas fa-book' style='font-size:24px'></i>
-                <a class=" items-center tracking-wide no-underline hover:no-underline font-bold text-gray-800 text-xl " href="#">
+            <div class="order-1 md:order-2" href="/">
+                <a class='fas fa-book' style='font-size:24px' href="/"></a>
+                <a class=" items-center tracking-wide no-underline hover:no-underline hover:underline font-bold text-gray-800 text-xl hover:opacity-70 " href="/">
                     Book Hub
                 </a>
+                <i class='invisible fas fa-book' style='font-size:24px'></i>
             </div>
-
             <div class="flex justify-center order-2 md:order-3 items-center">
                 <div>
                     <div class="dropdown relative">
