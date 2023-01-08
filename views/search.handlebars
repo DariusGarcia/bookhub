@@ -5,7 +5,7 @@
           <label for="" class="uppercase tracking-wide no-underline hover:no-underline font-bold text-gray-800 text-2xl">
           Search
           </label>
-          <input type="text" name="value" id="search-input" class="text-body-color border-[f0f0f0] focus:border-primary w-full rounded-md border-gray-300 py-3 px-[14px] text-base outline-none focus-visible:shadow-none" placeholder="Please Enter" />
+          <input type="text" name="value" id="search-input" class="text-body-color border-[f0f0f0] focus:border-primary w-full rounded-md border-gray-300 py-3 px-[14px] text-base outline-none focus-visible:shadow-none" placeholder="Enter keyword" />
           <div class="absolute inset-y-0 right-0 flex items-center">
             <label for="searchBar" class="sr-only">searchbar</label>
             <select id="searchOptions" name="options" class="h-full rounded-md border-transparent bg-transparent py-0 pl-2 pr-7 text-gray-500 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm xl:text-md">
@@ -33,7 +33,7 @@
             <div class="flex flex-col md:grid md:grid-cols-4 md:gap-4">
             {{#each books}}
               <div class='flex flex-col items-center rounded-lg'>
-                <a class='p-4 hover:bg-gray-50 hover:scale-110 rounded-md' href={{id}}>
+                <a class='p-4 hover:bg-gray-50 hover:scale-105 hover:opacity-80 ease-out transition rounded-md' href='/{{id}}'>
                   <div class="mx-auto place-content-center items-center flex justify-center">
                     <img class='w-36 h-36' src='https://i.pinimg.com/564x/09/ab/a0/09aba0ec5edfab5445d16eb8493af2a6.jpg' />
                   </div>
