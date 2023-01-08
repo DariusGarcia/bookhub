@@ -31,7 +31,6 @@ function handleAuthDisplay() {
   const logoutEl = document.querySelector('#logout-link')
   const signupEl = document.querySelector('#signup-link')
   const authStatusEl = document.querySelector('#auth-status').value
-  console.log('auth status: ' + authStatusEl)
   if (authStatusEl === '' || null) {
     // means user is logged out
     loginEl.classList.remove('hidden')
@@ -46,7 +45,4 @@ function handleAuthDisplay() {
 
 handleAuthDisplay()
 
-
 const authStatus = document.getElementById('auth-status').value
-
-console.log(authStatus)

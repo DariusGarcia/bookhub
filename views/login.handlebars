@@ -1,4 +1,5 @@
-<div class='login-card container'>
+<div class='mt-24 h-full login-card container'>
+  Login
   <section class="h-screen input-wrapper">
   <div class="px-6 text-gray-800">
     <div
@@ -15,8 +16,6 @@
       </div>
       <div class="xl:ml-20 xl:w-5/12 lg:w-5/12 md:w-8/12 mb-12 md:mb-0">
         <form id='login-form' class='auth-form'>
-          
-
           <!-- Email input -->
           <div class="mb-6 input-wrapper">
             <label for='username-input-login'>Username</label>
@@ -60,22 +59,7 @@
     </div>
   </div>
 </section>
-  {{!-- <div class='auth-container'>
-    <div >
-      <h2>Login</h2>
-    </div>
-    <form id='login-form' class='auth-form'>
-      <div class="input-wrapper">
-        <label for='username-input-login'>Username</label>
-        <input type='text'  class='auth-input-fields' id='username-input-login' />
-      </div>
-      <div class="input-wrapper">
-        <label for='password-input-login' class='form-label'>Password</label>
-        <input type='password' class='auth-input-fields'  id='password-input-login' />
-      </div>
-      <button type='submit' id='login-btn' class='auth-btn'>Login</button>
-      <a type='button' href='/signup'>Sign up instead</a>
-    </form></div> --}}
+ {{> footer}}
 </div>
 
 

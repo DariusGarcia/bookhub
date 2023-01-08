@@ -1,5 +1,4 @@
 // fetch book by query filter
-const searchFormContainer = document.querySelector('#search-form')
 const searchBtn = document.querySelector('#search-btn')
 
 const filterHandler = async function (e) {
@@ -34,9 +33,9 @@ const filterHandler = async function (e) {
     .then((data) => data.json())
     .then((res) => console.log(res))
     .catch((err) => console.log(err))
+
   //   document.location.replace('/')
-  searchData()
+  searchData
 }
-console.log(searchData)
 
 searchBtn.addEventListener('click', filterHandler)
