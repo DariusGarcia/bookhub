@@ -3,6 +3,6 @@ module.exports = {
     return str.substring(0, 30)
   },
   format_body: (str) => {
-    return str.substring(0, 90)
+    return str.substring(0, 115)
   },
 }

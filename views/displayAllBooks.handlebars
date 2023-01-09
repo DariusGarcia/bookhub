@@ -1,7 +1,7 @@
 <section class='my-4 px-2 md:px-0 h-full'>
   <div class='container mx-auto flex items-center flex-wrap pt-4 pb-12'>
-    <nav id='store' class='w-full'>
-        <div class='w-full container mx-auto flex flex-wrap items-center justify-between mt-0  py-3'>
+    <nav id='store' class='w-full px-4 md:px-0'>
+        <div class='w-full container md:mx-auto flex flex-wrap items-center justify-between mt-0 px-2 py-3'>
           <a class='uppercase tracking-wide no-underline hover:no-underline font-bold text-gray-800 text-2xl'>
             All Books
           </a>
@@ -14,7 +14,7 @@
         </div>
       </nav>
     <section class="h-full mb-12 px-2">
-      <ul class=' flex flex-row md:flex-row  list-none border-b-0 pl-0 mb-4'>
+      <ul class=' flex flex-row md:flex-row items-center list-none border-b-0 pl-0 mb-4'>
         <a
           href='/books'
           class=' w-full block font-bold text-center text-sm leading-tight uppercase border-x-0 border-t-0 border-b-2  px-6 py-3 my-2 text-green-800  hover:border-b-green-600 hover:bg-gray-100 focus:border-transparent active'
@@ -45,29 +45,29 @@
           id='tabs-top-50'
         >Top 50</a>
       </ul>
-      <div class="tab-content" id="tabs-tabContent">
+      <div class="tab-content " id="tabs-tabContent">
         <div class="tab-pane fade show active" id="tabs-trending" role="tabpanel" aria-labelledby="tabs-trending-book">
           {{!-- All BOOKS --}}
-          <section class="flex flex-col">
-            <div class="flex flex-col md:grid md:grid-cols-4 md:gap-4">
+          <section class="flex flex-col ">
+            <div class="flex flex-col md:grid md:grid-cols-4 md:gap-4 w-full">
             {{#each books}}
-              <div class='flex flex-col items-center rounded-lg'>
-                <a class='p-4 hover:bg-gray-50 hover:scale-105 hover:opacity-80 ease-out transition rounded-md' href='/{{id}}'>
-                  <div class="mx-auto place-content-center items-center flex justify-center">
-                    <img class='w-36 h-36' src='https://i.pinimg.com/564x/09/ab/a0/09aba0ec5edfab5445d16eb8493af2a6.jpg' />
+              <div class='flex flex-col items-center rounded-lg w-full gap-2 '>
+                <a class='flex flex-row md:flex-col items-center md:items-start gap-4 p-2 min-w-56 w-full  hover:bg-green-50 hover:scale-105 hover:opacity-80 ease-out transition rounded-md' href='/{{id}}'>
+                  <div class="flex ">
+                    <img class='w-32 h-24 rounded-md md:w-36 md:h-36' src='https://i.pinimg.com/564x/09/ab/a0/09aba0ec5edfab5445d16eb8493af2a6.jpg' />
                   </div>
                   {{!-- add padding on top between img and title --}}
-                  <div class="pt-2">
+                  <div class="pt-2 w-full">
                     <div class=' flex items-center justify-between'>
-                      <p class='mt-1 text-xl rounded-sm text-gray-900 font-bold'>{{format_title title}}
+                      <p class='mt-1 text-xl rounded-sm text-gray-900 font-bold title'>{{format_title title}}
                       </p>
                     </div>
-                    <span class="flex flex-col gap-2 ">
-                      <p class='mt-1 text-gray-700 font-semibold'>by {{author}}</p>
+                    <span class="flex flex-col gap-3 ">
+                      <p class='mt-1  font-bold title'>by {{author}}</p>
                       <p class=' rounded-sm text-gray-600 text-sm'>Published in {{publishingDate}}</p>
-                      <p class=' rounded-sm text-gray-500 text-sm line-clamp'> {{format_body description}}...</p>
+                      <p class=' rounded-sm text-gray-500 text-sm line-clamp md:w-3/5 italic'> {{format_body description}}...</p>
                       <div class="flex flex-row justify-between">
-                        <p class='text-sm px-2 rounded-md text-gray-500 border-2 border-gray-500 w-fit'>
+                        <p class='flex text-center items-center px-2 rounded-md text-gray-600 border-2 border-gray-100 w-min uppercase text-xs'>
                           {{genre}}
                         </p>
                         <svg class='h-6 w-6 fill-current text-red-500 hover:scale-110 ease-in' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'>
@@ -84,7 +84,8 @@
        
     </section>
      
-    {{> footer}}
+   <div class="mt-12 w-full">
+  {{> footer}}
+  </div>
 </section>
-<script src="/js/searchQueries.js"></script>
 <script src="/js/books.js"></script>

@@ -62,7 +62,6 @@ Seed the database with data
 
 ```
 npm run seed
-
 ```
 
 start express server
