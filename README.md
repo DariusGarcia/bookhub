@@ -1,5 +1,8 @@
 # BookHub
 
+![Screenshot of the homepage](./public/images/homepage.png)
+![Screenshot of all books page](./public/images/books-page.png)
+
 ## Description
 
 BookHub is Node.js app that allows users to view books stored in our book database. Users can add to their reading list or just browse a variety of different books.
