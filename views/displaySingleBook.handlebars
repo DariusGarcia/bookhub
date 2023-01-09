@@ -78,21 +78,22 @@
                             <div class="w-full px-4 lg:w-1/2 xl:w-5/12">
                                 <div class="relative rounded-lg bg-white p-8 shadow-lg sm:p-12">
                                     <form id="update-book-form">
+                                        <input type="text" id="hidden-book-id" hidden value="{{book.id}}">
                                         <div class="mb-6">
-                                            <input type="text"  placeholder="Book Title" class="text-body-color border-[f0f0f0] focus:border-primary w-full rounded border py-3 px-[14px] text-base outline-none focus-visible:shadow-none"/>
+                                            <input type="text" id="book-form-title-input" placeholder="Book Title" class="text-body-color border-[f0f0f0] focus:border-primary w-full rounded border py-3 px-[14px] text-base outline-none focus-visible:shadow-none"/>
                                         </div>
                                         <div class="mb-6">
-                                            <input type="text"  placeholder="Author Name" class="text-body-color border-[f0f0f0] focus:border-primary w-full rounded border py-3 px-[14px] text-base outline-none focus-visible:shadow-none"/>
+                                            <input type="text" id="book-form-author-input" placeholder="Author Name" class="text-body-color border-[f0f0f0] focus:border-primary w-full rounded border py-3 px-[14px] text-base outline-none focus-visible:shadow-none"/>
                                         </div>
                                         <div class="mb-6">
-                                            <input type="text"  placeholder="Genre" class="text-body-color border-[f0f0f0] focus:border-primary w-full rounded border py-3 px-[14px] text-base outline-none focus-visible:shadow-none"/>
+                                            <input type="text" id="book-form-genre-input" placeholder="Genre" class="text-body-color border-[f0f0f0] focus:border-primary w-full rounded border py-3 px-[14px] text-base outline-none focus-visible:shadow-none"/>
                                         </div>
                                         <div class="mb-6">
-                                            <input type="text"  placeholder="Date Published" class="text-body-color border-[f0f0f0] focus:border-primary w-full rounded border py-3 px-[14px] text-base outline-none focus-visible:shadow-none"/>
+                                            <input type="text" id="book-form-datePublished-input" placeholder="Date Published" class="text-body-color border-[f0f0f0] focus:border-primary w-full rounded border py-3 px-[14px] text-base outline-none focus-visible:shadow-none"/>
                                         </div>
                                         <div class="mb-6">
                                             <label for="description" class="text-black-100">Book description</label>
-                                            <textarea rows="6" placeholder="Description" class="text-body-color border-[f0f0f0] focus:border-primary w-full resize-none rounded border py-3 px-[14px] text-base outline-none focus-visible:shadow-none">
+                                            <textarea id="book-form-description-input" rows="6" placeholder="Description" class="text-body-color border-[f0f0f0] focus:border-primary w-full resize-none rounded border py-3 px-[14px] text-base outline-none focus-visible:shadow-none">
                                             </textarea>
                                         </div>
                                         <button type="submit" id='update-book-btn' class='bg-dark border-primary w-full rounded border p-3 text-black transition hover:bg-opacity-70 hover:bg-green-400'> Update book </button>
@@ -106,3 +107,4 @@
         </div>
         {{> footer}}
     </section>
+    <script src="/js/books.js"></script>
