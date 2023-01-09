@@ -15,11 +15,11 @@
             <div class="tab-content" id="tabs-tabContentFill">
             <div class="tab-pane fade show active" id="tabs-homeFill" role="tabpanel" aria-labelledby="tabs-home-tabFill">
                 <!-- Tab 1 content fill home -->
-                <section class="relative z-10 overflow-hidden bg-white py-12">
-                    <div class="border-2 container mx-auto">
-                        <div class="-mx-4 flex flex-wrap lg:justify-between">
-                            <div class="w-full px-4 lg:w-1/2 xl:w-6/12 border-gray-50 ">
-                                <div class="relative rounded-lg bg-white p-4 shadow-md sm:p-4">
+               <section class="relative z-10 overflow-hidden px-2 bg-stone-100  py-12">
+                    <div class=" container mx-auto">
+                        <div class="  flex flex-wrap items-start lg:justify-between p-2">
+                            <div class="w-full mx-2 lg:w-1/2 xl:w-6/12 shadow-md ">
+                                <div class="relative rounded-lg bg-white p-4  sm:p-4">
                                     <div class="flex flex-col gap-2">
                                         <div class="flex justify-center  w-full">
                                             <img src="https://i.pinimg.com/564x/db/5b/85/db5b853d663d5243fb55efe7900127f5.jpg" alt="image" class="w-36 md:w-48"/>
@@ -48,10 +48,10 @@
             </div>
             <div class="tab-pane fade" id="tabs-profileFill" role="tabpanel" aria-labelledby="tabs-profile-tabFill">
                 <!-- Tab 2 content fill update -->
-                <section class="relative z-10 overflow-hidden bg-white py-12">
+                <section class="relative z-10 overflow-hidden px-2 bg-stone-100  py-12">
                     <div class=" container mx-auto">
-                        <div class=" -mx-4 flex flex-wrap items-center lg:justify-between">
-                            <div class="w-full px-4 lg:w-1/2 xl:w-6/12 border-gray-100 border-2 ">
+                        <div class="  flex flex-wrap items-start lg:justify-between p-2">
+                            <div class="w-full mx-2 lg:w-1/2 xl:w-6/12 border-gray-100 shadow-md ">
                                 <div class="relative rounded-lg bg-white p-4  sm:p-4">
                                     <div class="flex flex-col gap-2">
                                         <div class="flex justify-center  w-full">
@@ -92,7 +92,7 @@
                                             <input type="text" id="book-form-datePublished-input" placeholder="Date Published" class="text-body-color border-[f0f0f0] focus:border-primary w-full rounded border py-3 px-[14px] text-base outline-none focus-visible:shadow-none"/>
                                         </div>
                                         <div class="mb-6">
-                                            <label for="description" class="text-black-100">Book description</label>
+                                            <label for="description" class="text-gray-400">Book description</label>
                                             <textarea id="book-form-description-input" rows="6" placeholder="Description" class="text-body-color border-[f0f0f0] focus:border-primary w-full resize-none rounded border py-3 px-[14px] text-base outline-none focus-visible:shadow-none">
                                             </textarea>
                                         </div>
@@ -105,6 +105,8 @@
                 </section>
             </div>
         </div>
-        {{> footer}}
+       <div class="mt-12 w-full">
+  {{> footer}}
+  </div>
     </section>
     <script src="/js/books.js"></script>
