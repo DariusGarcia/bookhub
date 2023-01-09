@@ -7,6 +7,7 @@ const filterHandler = async function (e) {
   const searchFilterDropdown = document.querySelector('#searchOptions')
   const searchQueryValue = document.querySelector('#search-input').value
   const booksArray = []
+
   // Get the selected option's index
   const selectedIndex = searchFilterDropdown.selectedIndex
 
