@@ -1,5 +1,15 @@
 // fetch book by query filter
 const searchBtn = document.querySelector('#search-btn')
+// array to store search results
+const booksArray = []
+// const displayElements = booksArray.map((book) => `<h1>${book.title}</h1>`)
+
+// function displaySearchResults() {
+//   const bookContainer = document.querySelector('#book-search-container')
+//   // bookContainer.innerHTML = `<article>${displayElements}</article>`
+//   bookContainer.innerHTML = '<div>hello</div>'
+//   console.log('display el: ' + displayElements)
+// }
 
 const filterHandler = async function (e) {
   e.preventDefault()
@@ -30,11 +40,13 @@ const filterHandler = async function (e) {
   const searchData = await fetch(
     `/api/books/${searchFilter}/${searchQueryValue}`
   )
-    .then((data) => data.json())
-    .then((res) => console.log(res))
+    .then((searchResults) => searchResults.json())
+    .then((books) => {
+      booksArray.push(...books)
+    })
     .catch((err) => console.log(err))
 
-  //   document.location.replace('/')
+  console.log('search results: ' + booksArray)
   searchData
 }
 
