@@ -86,7 +86,7 @@ homeRouter.get('/:id', async (req, res) => {
     const singleBook = await Book.findByPk(bookId)
     if (singleBook) {
       const book = singleBook.get({ plain: true })
-      res.render('displaySingleBook', { layout: 'main', book })
+      res.render('updateBook', { layout: 'main', book })
     }
   } catch (err) {
     res.status(500).json(err)

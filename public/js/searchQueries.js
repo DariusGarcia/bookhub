@@ -1,20 +1,12 @@
 // fetch book by query filter
 const searchBtn = document.querySelector('#search-btn')
 // array to store search results
-const booksArray = []
-// const displayElements = booksArray.map((book) => `<h1>${book.title}</h1>`)
-
-// function displaySearchResults() {
-//   const bookContainer = document.querySelector('#book-search-container')
-//   // bookContainer.innerHTML = `<article>${displayElements}</article>`
-//   bookContainer.innerHTML = '<div>hello</div>'
-//   console.log('display el: ' + displayElements)
-// }
 
 const filterHandler = async function (e) {
   e.preventDefault()
   const searchFilterDropdown = document.querySelector('#searchOptions')
   const searchQueryValue = document.querySelector('#search-input').value
+  const booksArray = []
 
   // Get the selected option's index
   const selectedIndex = searchFilterDropdown.selectedIndex
@@ -46,7 +38,7 @@ const filterHandler = async function (e) {
     })
     .catch((err) => console.log(err))
 
-  console.log('search results: ' + booksArray)
+  console.log(booksArray)
   searchData
 }
 
