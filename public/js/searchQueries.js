@@ -1,7 +1,7 @@
-// fetch book by query filter
 const searchBtn = document.querySelector('#search-btn')
 // array to store search results
 
+// fetch book by query filter
 const filterHandler = async function (e) {
   e.preventDefault()
   const searchFilterDropdown = document.querySelector('#searchOptions')
