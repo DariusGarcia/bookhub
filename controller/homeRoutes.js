@@ -80,7 +80,7 @@ homeRouter.get('/signup', async (req, res) => {
   }
 })
 // display single book page
-homeRouter.get('/:id', async (req, res) => {
+homeRouter.get('/:id', isAuthenticated, async (req, res) => {
   const bookId = req.params.id
   try {
     const singleBook = await Book.findByPk(bookId)
@@ -99,7 +99,7 @@ homeRouter.get('/edit/:id', isAuthenticated, async (req, res) => {
     const singleBook = await Book.findByPk(bookId)
     if (singleBook) {
       const book = singleBook.get({ plain: true })
-      res.render('updateBook', { layout: 'main', book })
+      res.render('displaySingleBook', { layout: 'main', book })
     }
   } catch (err) {
     res.status(500).json(err)
