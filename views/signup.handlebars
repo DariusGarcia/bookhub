@@ -1,7 +1,7 @@
-<div class='login-card'>
-  <div class='auth-container'>
+<div class='h-full login-card '>
+  <div class='auth-container my-12'>
     <div >
-      <h2>Sign Up</h2>
+      <h2 class="text-xl font-bold text-center">Sign Up</h2>
     </div>
     <form id='register-form' class='auth-form'>
       <div class="input-wrapper">
@@ -12,9 +12,11 @@
         <label for='password-input-login' class='form-label'>Password</label>
         <input type='password' class='auth-input-fields'  id='password-input-login' />
       </div>
-      <button type='submit' id='login-btn' class='auth-btn'>Sign up</button>
-      <a type='button' href='/login'>Have an account already? Login</a>
+      <button type='submit' id='login-btn' class='auth-btn bg-green-400'>Sign up</button>
+      <p class="">Have an account already? <a class='text-red-400 hover:underline hover:opacity-80 ' type='button' href='/login'>Login</a>
+      </p>
     </form></div>
+    {{> footer}}
 </div>
 
 <script src='/js/signup.js'></script>

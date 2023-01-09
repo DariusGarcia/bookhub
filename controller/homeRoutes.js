@@ -73,9 +73,6 @@ homeRouter.get('/login', async (req, res) => {
 })
 // display sign-up page
 homeRouter.get('/signup', async (req, res) => {
-  if (req.session.loggedIn) {
-    res.redirect('/books')
-  }
   try {
     res.render('signup')
   } catch (err) {
