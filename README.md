@@ -23,6 +23,8 @@ BookHub is Node.js app that allows users to view books stored in our book databa
 - Express.js
 - Handlebars
 - TailwindCSS
+- MySQL Database
+- Sequelize
 
 ## Usage
 
